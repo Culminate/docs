@@ -9,6 +9,8 @@
 
 	[команда] --help
 	man [команда]
+    
+[горячие клавиши в шелле](https://habr.com/ru/post/99843/)
 
 #### Система
 
@@ -423,3 +425,4 @@ Open означает, что приложение на целевой маши�
 - [Изучаем процессы в Linux](https://habr.com/post/423049/)
 - [Настройка Sudoers](http://blog.sedicomm.com/2018/03/21/poleznye-nastrojki-sudoers-dlya-sudo-v-linux/)
 - [Твики для Firefox под linux](https://wiki.archlinux.org/index.php/Firefox/Tweaks)
+- [Стандарт структуры иерархии папок в LINUX](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)

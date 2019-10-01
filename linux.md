@@ -217,10 +217,16 @@
 
 [Что такое grep и с чем его едят](https://habrahabr.ru/post/229501/)
 
+#### Поиск драйверов
+
+Если при apt upgrade выводится `W: Possible missing firmware /lib/firmware/rtl_nic/rtl8107e-2.fw for module r8169` то нужный драйвер можно найти командой `apt-file`
+
+    apt-file find rtl8107e # покажет все пакеты где встречается такой файл
+
 #### Преобразование текста
     
     echo "Строка" | sed 's/к/ф/'       # заменяет букву `к` на `ф`
-    cat file | sed '/^#/d'            # удалить все строки начинающиеся с `#`
+    cat file | sed '/^#/d'             # удалить все строки начинающиеся с `#`
     cat file | sed '/^\s*$/d'          # удалить все пустые строки
 
 [Одно-строчные скрипты SED](http://ant0.ru/sed1line.html)

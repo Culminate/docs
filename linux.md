@@ -324,12 +324,28 @@ Debian с версии 8 работает на [systemd](https://wiki.debian.org
 
     xdotool key Up # эмулирует клавишу Up
 
+#### Вертикальная синхронизация на nvidia
+
+So, how i fixed the screen tearing on Nvidia proprietary driver:
+Check if your V-sync is active:
+`sudo cat /sys/module/nvidia_drm/parameters/modeset` If the output is Y then it is active, if N do the following:
+create a new file `sudo nano /etc/modprobe.d/nvidia-drm-nomodeset.conf` and insert the line:
+`options nvidia-drm modeset=1`
+
+Then:
+`sudo update-initramfs -u`
+Then check again with:
+`sudo cat /sys/module/nvidia_drm/parameters/modeset`
+
+Have a nice day to all!
+
 ## Работа с сетью
 
 	sudo ifconfig           # общая информаци о сетевых устройствах этого пк
 	sudo netstat -tpln      # посмотреть какая программа слушает порт
     python -m CGIHTTPServer # быстро поднять http server
     sudo ip addr show       # показать все ip адреса на интерфейсе
+
 	
 [Настройка iptables для чайников](https://losst.ru/nastrojka-iptables-dlya-chajnikov)
 

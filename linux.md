@@ -339,6 +339,32 @@ Then check again with:
 
 Have a nice day to all!
 
+#### Управление яркостью DDC/CI nvidia
+
+```
+sudo apt install ddcutil    # установка
+# добавим модуль управления шиной i2c в автозагрузку
+echo "i2c-dev" | sudo tee /etc/modules-load.d/i2c-dev.conf
+# если у вас видеокарта nvidia включим управление по i2c в драйвере nvidia
+echo 'options nvidia NVreg_RegistryDwords="RMUseSwI2c=0x01;RMI2cSpeed=100"' | sudo tee -a /etc/modprobe.d/nvidia.conf
+sudo ddcutil detect         # определение мониторов
+sudo ddcutil probe          # пробуем получить все регистры и их описание
+sudo ddcutil setvcp 10 50   # установить 50 процентов яркости на мониторе
+```
+
+Чтобы использовать ddcutil без root прав
+
+```
+# необходимо перелогиниться в учётку чтобы группа начала действовать
+sudo usermod -aG i2c $USER
+```
+
+[DDC/CI monitor control on Linux](https://blog.tcharles.fr/ddc-ci-screen-control-on-linux/)
+
+#### udev
+
+[обработка hotplug](https://debian-handbook.info/browse/ru-RU/stable/sect.hotplug.html)
+
 ## Работа с сетью
 
 	sudo ifconfig           # общая информаци о сетевых устройствах этого пк

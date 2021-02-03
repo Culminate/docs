@@ -4,8 +4,8 @@ Raspbian OS 64bit
 ## Wireguard
 
 ```
-echo -
+echo -ne ""
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY1NzUyOTQ5XX0=
+eyJoaXN0b3J5IjpbMzM4ODEzOTQ0XX0=
 -->

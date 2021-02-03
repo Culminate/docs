@@ -4,11 +4,15 @@ kernel
 
 ## Wireguard
 
+Install
+
 ```
 echo -ne "deb http://deb.debian.org/debian buster-backports main contrib non-free" | sudo tee /etc/apt/sources.list.d/buster-backports.list
 sudo apt update
-
+sudo apt install wireguard-dkms wireguard-tools
 ```
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc2NDg0ODMyOSwzMzg4MTM5NDRdfQ==
+eyJoaXN0b3J5IjpbMzA3MjU1NjI3LDMzODgxMzk0NF19
 -->

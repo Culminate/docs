@@ -1,3 +1,13 @@
+---
+title: clang
+description: 
+published: true
+date: 2022-02-23T19:34:29.441Z
+tags: 
+editor: markdown
+dateCreated: 2022-02-23T15:03:35.447Z
+---
+
 # Язык Си
 
 ![Clang](../img/C.jpg)

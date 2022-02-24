@@ -2,7 +2,7 @@
 title: drone.io
 description: 
 published: true
-date: 2022-02-24T13:52:30.883Z
+date: 2022-02-24T13:52:59.662Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-24T13:52:30.882Z
@@ -121,9 +121,3 @@ drone orgsecret add --allow-pull-request Novella_Ctl novella_password test
       event:
       - pull_request
     ```
-
-# Настройка виртуалки для тестирования проектов П215-300
-
-1. Установить с диска astralinuxSE Базовую систему без графического интерфейса, добавить сетевые утилиты и SSH.
-2. Активировать SSH `sudo systemctl enable --now ssh.service`
-3. Скачать `git build-essential cmake libboost1.62-dev libboost-system1.62-dev qtbase5-dev qtdeclarative5-dev libconfig++-dev`

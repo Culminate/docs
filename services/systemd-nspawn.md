@@ -1,8 +1,8 @@
 ---
-title: Container systemd-nspawn
+title: systemd-nspawn container 
 description: 
 published: true
-date: 2022-02-24T12:59:06.732Z
+date: 2022-02-24T12:59:56.270Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-24T12:59:06.732Z

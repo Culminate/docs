@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-03-11T11:49:26.051Z
+date: 2022-03-14T12:18:31.063Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -101,6 +101,14 @@ https://en.cppreference.com/w/cpp/memory/weak_ptr
 ## barrier
 
 https://en.cppreference.com/w/cpp/atomic/atomic
+
+# Минимальный размер класса и виртуального класса
+
+Минимальный размер класса равен 1. По стандарту размер класса(структуры) не может быть равен 0, т.к. будет нарушаться расчёт адреса в памяти по смещению.
+
+Минимальный размер виртуального клсса равен размеру указателя в системе(на 64x это 8). Т.к. Это размер vtable(виртуальной таблицы).
+
+https://www.stroustrup.com/bs_faq2.html#sizeof-empty
 
 # links
 [Приведение типов](https://habr.com/ru/post/106294/)

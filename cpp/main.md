@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-03-14T12:18:31.063Z
+date: 2022-03-14T12:21:16.646Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -109,6 +109,10 @@ https://en.cppreference.com/w/cpp/atomic/atomic
 Минимальный размер виртуального клсса равен размеру указателя в системе(на 64x это 8). Т.к. Это размер vtable(виртуальной таблицы).
 
 https://www.stroustrup.com/bs_faq2.html#sizeof-empty
+
+# RAII (Resource Acquisition Is Initialization)
+
+https://habr.com/ru/post/150069/
 
 # links
 [Приведение типов](https://habr.com/ru/post/106294/)

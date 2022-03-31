@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-03-31T13:49:47.458Z
+date: 2022-03-31T14:25:31.410Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -109,6 +109,8 @@ TODO
 https://en.cppreference.com/w/cpp/atomic/atomic
 
 # Мутабельность mutable
+
+https://habr.com/ru/company/infopulse/blog/341264/
 
 TODO
 

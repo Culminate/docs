@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-03-31T13:48:41.425Z
+date: 2022-03-31T13:49:47.458Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -107,6 +107,10 @@ TODO
 ## barrier
 
 https://en.cppreference.com/w/cpp/atomic/atomic
+
+# Мутабельность mutable
+
+TODO
 
 # Минимальный размер класса и виртуального класса
 

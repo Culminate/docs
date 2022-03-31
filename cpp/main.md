@@ -2,14 +2,14 @@
 title: cpp
 description: 
 published: true
-date: 2022-03-31T14:37:37.346Z
+date: 2022-03-31T17:44:29.105Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
 ---
 
 # C++
-# Приведение типов
+# Приведение типов {.tabset}
 
 https://habr.com/ru/post/106294/
 

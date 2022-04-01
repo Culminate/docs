@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-03-31T17:53:39.579Z
+date: 2022-04-01T20:03:23.125Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -109,6 +109,18 @@ TODO
 ## semaphore
 
 ## barrier
+
+## std::promise
+## std::future
+## std::async
+## std::packaged_task
+
+## Неблокирующая многопоточность
+
+https://habr.com/ru/post/328348/
+https://habr.com/ru/post/195948/
+
+https://habr.com/ru/amp/post/517918/
 
 https://en.cppreference.com/w/cpp/atomic/atomic
 

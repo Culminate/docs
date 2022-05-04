@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-05-04T11:00:07.701Z
+date: 2022-05-04T11:29:10.526Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -153,6 +153,7 @@ https://www.stroustrup.com/bs_faq2.html#sizeof-empty
 https://opensource.com/article/19/4/interprocess-communication-linux-networking
 https://opensource.com/article/19/4/interprocess-communication-linux-storage
 https://opensource.com/article/19/4/interprocess-communication-linux-channels
+https://www.boost.org/doc/libs/1_74_0/doc/html/interprocess.html
 
 
 # links

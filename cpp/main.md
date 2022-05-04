@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-05-04T11:29:10.526Z
+date: 2022-05-04T11:39:26.415Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -155,6 +155,44 @@ https://opensource.com/article/19/4/interprocess-communication-linux-storage
 https://opensource.com/article/19/4/interprocess-communication-linux-channels
 https://www.boost.org/doc/libs/1_74_0/doc/html/interprocess.html
 
+# Новвоведения стандартов
+
+https://github.com/AnthonyCalandra/modern-cpp-features
+https://en.cppreference.com/w/cpp/compiler_support
+
+## C++14
+
+- бинарные литералы;
+- атрибут deprecated;
+- цифровые разделители;
+- автоматическое определение возвращаемого типа функции — вывод типов;
+- relaxed constexpr функции;
+- шаблоны переменных;
+- стандартные пользовательские литералы;
+- std::make_unique().
+
+## C++17
+
+- идентификатор препроцессора __has_include для проверки доступности дополнительных заголовочных файлов;
+- if-стейтменты, которые обрабатываются во время компиляции;
+- инициализаторы в стейтментах if и switch;
+- встроенные переменные;
+- fold-выражения;
+- вложенные пространства имен теперь можно определять как пространство имен X::Y;
+- удаление std::auto_ptr и других устаревших типов;
+- static_assert больше не требует параметра в виде текстового сообщения;
+- std::any;
+- std::byte;
+- std::filesystem;
+- std::optional;
+- std::shared_ptr теперь может управлять массивами C-style (но через std::make_shared() их по-прежнему нельзя создавать);
+- std::size;
+- триграфы были удалены;
+- UTF-8 (u8) символьные литералы.
+
+## C++20
+
+TODO
 
 # links
 [A guide to understanding Linux software libraries in C](https://opensource.com/article/21/2/linux-software-libraries)

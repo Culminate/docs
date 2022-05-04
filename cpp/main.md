@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-05-04T11:39:26.415Z
+date: 2022-05-04T11:55:32.780Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -98,31 +98,27 @@ TODO
 
 # Мультипоточность
 
-## std::atomic
+https://en.cppreference.com/w/cpp/atomic/atomic
+https://habr.com/ru/post/517918/
 
-## std::mutex
+- std::atomic
+- std::mutex
+- std::condition_variable
 
-## rdlock rwlock
+- rdlock rwlock
+- spinlock
+- semaphore
+- barrier
 
-## spinlock
-
-## semaphore
-
-## barrier
-
-## std::promise
-## std::future
-## std::async
-## std::packaged_task
+- std::promise
+- std::future
+- std::async
+- std::packaged_task
 
 ## Неблокирующая многопоточность
 
 https://habr.com/ru/post/328348/
 https://habr.com/ru/post/195948/
-
-https://habr.com/ru/amp/post/517918/
-
-https://en.cppreference.com/w/cpp/atomic/atomic
 
 # Мутабельность mutable
 

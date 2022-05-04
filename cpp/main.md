@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-04-01T20:03:23.125Z
+date: 2022-05-04T11:00:07.701Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -148,5 +148,15 @@ TODO
 
 https://www.stroustrup.com/bs_faq2.html#sizeof-empty
 
+# IPC
+
+https://opensource.com/article/19/4/interprocess-communication-linux-networking
+https://opensource.com/article/19/4/interprocess-communication-linux-storage
+https://opensource.com/article/19/4/interprocess-communication-linux-channels
+
 
 # links
+[A guide to understanding Linux software libraries in C](https://opensource.com/article/21/2/linux-software-libraries)
+[Getting started with OpenSSL: Cryptography basics](https://opensource.com/article/19/6/cryptography-basics-openssl-part-1)
+[How to use OpenSSL: Hashes, digital signatures, and more](https://opensource.com/article/19/6/cryptography-basics-openssl-part-2)
+[How to use Protobuf for data interchange](https://opensource.com/article/19/10/protobuf-data-interchange)

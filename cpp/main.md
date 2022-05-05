@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-05-05T11:49:21.152Z
+date: 2022-05-05T11:50:26.010Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -58,7 +58,7 @@ https://stackoverflow.com/a/7832003
 
 C-style cast похоже на reinterpret_cast, но оно также «пробует» сначала static_cast и может отбрасывать квалификацию cv (в то время как static_cast и reinterpret_cast не могут) и выполнять преобразования без учета контроля доступа. (see 5.4/4 in C++11 standard)
 
-```
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -89,7 +89,7 @@ int main()
 
 output:
 
-```
+```c
 reinterpret_cast:  0xbfd84e78
 C-style cast:      0xbfd84e7c
 no cast:           0xbfd84e78

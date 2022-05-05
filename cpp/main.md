@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-05-04T11:55:32.780Z
+date: 2022-05-05T11:49:21.152Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -50,6 +50,52 @@ https://habr.com/ru/post/106294/
 Си-шный метод приведения типов. Пожалуй самый нежелательный способ приведения типов. Страуструп пишет:
 «Например, что это значит выражение — x = (T)y;. Мы не знаем. Это зависит от типа T, типов x и y. T может быть названием типа, typedef или может быть параметр template-а. Может быть, х и у являются скалярными переменными и Т представляет собой значение преобразования. Может быть, х объекта класса, производного от класса Y и Т — нисходящее преобразование. По этой причине программист может не знать, что он делает на самом деле.»
 Вторая причина нежелательного использования приведения типов в C-style — трудоемкость процесса поиска мест приведения типов.
+
+
+## Reinterpret_cast vs. C-style cast
+
+https://stackoverflow.com/a/7832003
+
+C-style cast похоже на reinterpret_cast, но оно также «пробует» сначала static_cast и может отбрасывать квалификацию cv (в то время как static_cast и reinterpret_cast не могут) и выполнять преобразования без учета контроля доступа. (see 5.4/4 in C++11 standard)
+
+```
+#include <iostream>
+
+using namespace std;
+
+class A { int x; };
+class B { int y; };
+
+class C : A, B { int z; };
+
+int main()
+{
+  C c;
+
+  // just type pun the pointer to c, pointer value will remain the same
+  // only it's type is different.
+  B *b1 = reinterpret_cast<B *>(&c);
+
+  // perform the conversion with a semantic of static_cast<B*>(&c), disregarding
+  // that B is an unaccessible base of C, resulting pointer will point
+  // to the B sub-object in c.
+  B *b2 = (B*)(&c);
+
+  cout << "reinterpret_cast:\t" << b1 << "\n";
+  cout << "C-style cast:\t\t" << b2 << "\n";
+  cout << "no cast:\t\t" << &c << "\n";
+}
+```
+
+output:
+
+```
+reinterpret_cast:  0xbfd84e78
+C-style cast:      0xbfd84e7c
+no cast:           0xbfd84e78
+```
+
+обратите внимание, что значение, созданное reinterpret_cast, точно такое же, как адрес 'c', в то время как C-style cast привело к правильному смещению указателя.
 
 # Умные указатели
 

@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-05-05T11:50:26.010Z
+date: 2022-05-13T07:43:16.546Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -241,3 +241,5 @@ TODO
 [Getting started with OpenSSL: Cryptography basics](https://opensource.com/article/19/6/cryptography-basics-openssl-part-1)
 [How to use OpenSSL: Hashes, digital signatures, and more](https://opensource.com/article/19/6/cryptography-basics-openssl-part-2)
 [How to use Protobuf for data interchange](https://opensource.com/article/19/10/protobuf-data-interchange)
+[Spinlocks and Read-Write Locks](http://locklessinc.com/articles/locks/)
+[Ускоряем std::shared_mutex в 10 раз](https://habr.com/ru/post/328362/)

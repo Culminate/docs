@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-05-13T07:43:16.546Z
+date: 2022-05-15T17:02:26.990Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -243,3 +243,4 @@ TODO
 [How to use Protobuf for data interchange](https://opensource.com/article/19/10/protobuf-data-interchange)
 [Spinlocks and Read-Write Locks](http://locklessinc.com/articles/locks/)
 [Ускоряем std::shared_mutex в 10 раз](https://habr.com/ru/post/328362/)
+[https://betterprogramming.pub/c-memory-pool-and-small-object-allocator-8f27671bd9ee](https://betterprogramming.pub/c-memory-pool-and-small-object-allocator-8f27671bd9ee)

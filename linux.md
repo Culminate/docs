@@ -1,3 +1,13 @@
+---
+title: linux
+description: 
+published: true
+date: 2023-01-20T16:03:36.412Z
+tags: 
+editor: markdown
+dateCreated: 2022-02-23T15:02:00.412Z
+---
+
 # LINUX | DEBIAN 9
 
 [настройка debian 9 после установки](https://losst.ru/nastrojka-debian-9-posle-ustanovki)
@@ -438,6 +448,40 @@ Open означает, что приложение на целевой маши�
 	--reason — показывать почему было принято решение о таком состоянии порта
 
 [Сканирование сети](https://www.ibm.com/developerworks/ru/library/au-satnetworkscan/index.html)
+
+## Zram
+
+/etc/modules-load.d/zram.conf
+```
+zram
+```
+
+/etc/modprobe.d/zram.conf
+```
+options zram num_devices=1
+```
+
+/etc/udev/rules.d/99-zram.rules
+```
+KERNEL=="zram0", ATTR{disksize}="8G",TAG+="systemd"
+```
+
+/etc/systemd/system/zram.service
+```
+[Unit]
+Description=Swap with zram
+After=multi-user.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStartPre=/sbin/mkswap /dev/zram0
+ExecStart=/sbin/swapon /dev/zram0
+ExecStop=/sbin/swapoff /dev/zram0
+
+[Install]
+WantedBy=multi-user.target
+```
 
 ## Полезные ссылки по работе с терминалом LINUX
 - [10 приёмов работы в терминале Linux, о которых мало кто знает](https://habrahabr.ru/company/ruvds/blog/336060/)

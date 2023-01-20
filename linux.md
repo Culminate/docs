@@ -2,7 +2,7 @@
 title: linux
 description: 
 published: true
-date: 2023-01-20T16:03:36.412Z
+date: 2023-01-20T16:05:33.534Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-23T15:02:00.412Z
@@ -450,6 +450,8 @@ Open означает, что приложение на целевой маши�
 [Сканирование сети](https://www.ibm.com/developerworks/ru/library/au-satnetworkscan/index.html)
 
 ## Zram
+https://docs.kernel.org/admin-guide/blockdev/zram.html
+https://wiki.archlinux.org/title/Improving_performance_(Русский)#Подкачка_в_zram_с_использованием_правила_udev
 
 /etc/modules-load.d/zram.conf
 ```

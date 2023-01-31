@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2023-01-31T05:15:06.647Z
+date: 2023-01-31T06:01:35.922Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -186,9 +186,15 @@ TODO
 
 https://habr.com/ru/post/150069/
 
-# Частичная специлизация шаблонов & SFINAE
+# Шаблоны
+
+## Частичная специлизация шаблонов & SFINAE
 
 TODO
+
+## std::forward
+
+https://pvs-studio.com/ru/blog/terms/6515/
 
 # Минимальный размер класса и виртуального класса
 

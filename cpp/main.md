@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2022-05-15T17:02:26.990Z
+date: 2023-01-31T05:15:06.647Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -142,6 +142,12 @@ TODO
 
 Противоположностью l-value является r-value. r-value — это значение, которое не имеет постоянного адреса в памяти. Примерами могут быть единичные числа (например, 7, которое имеет значение 7) или выражения (например, 3 + х, которое имеет значение х плюс 3).
 
+# Универсальные ссылки
+
+https://habr.com/ru/post/157961/
+
+TODO
+
 # Мультипоточность
 
 https://en.cppreference.com/w/cpp/atomic/atomic
@@ -150,16 +156,18 @@ https://habr.com/ru/post/517918/
 - std::atomic
 - std::mutex
 - std::condition_variable
-
-- rdlock rwlock
-- spinlock
-- semaphore
-- barrier
-
-- std::promise
-- std::future
-- std::async
-- std::packaged_task
+- std::counting_semaphore
+- std::binary_semaphore
+- асинхронное програмирование
+    - std::promise
+    - std::future
+    - std::async
+    - std::packaged_task
+-	linux
+    - rdlock rwlock
+    - spinlock
+    - semaphore
+    - barrier
 
 ## Неблокирующая многопоточность
 

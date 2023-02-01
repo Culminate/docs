@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2023-01-31T06:04:14.645Z
+date: 2023-02-01T06:24:35.825Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -144,12 +144,6 @@ TODO
 
 https://pvs-studio.com/ru/blog/terms/6517/
 
-# Универсальные ссылки
-
-https://habr.com/ru/post/157961/
-
-TODO
-
 # Мультипоточность
 
 https://en.cppreference.com/w/cpp/atomic/atomic
@@ -184,9 +178,9 @@ TODO
 
 # RAII (Resource Acquisition Is Initialization)
 
-TODO
-
 https://habr.com/ru/post/150069/
+
+TODO
 
 # Шаблоны
 
@@ -194,9 +188,17 @@ https://habr.com/ru/post/150069/
 
 TODO
 
+## Универсальные ссылки
+
+https://habr.com/ru/post/157961/
+
+TODO
+
 ## std::forward
 
 https://pvs-studio.com/ru/blog/terms/6515/
+
+TODO
 
 # Минимальный размер класса и виртуального класса
 

@@ -2,7 +2,7 @@
 title: ELF Relocation
 description: 
 published: true
-date: 2023-03-16T07:59:04.648Z
+date: 2023-03-16T07:59:18.074Z
 tags: 
 editor: markdown
 dateCreated: 2023-03-16T07:41:18.626Z
@@ -136,7 +136,7 @@ lib.sym
 };
 ```
 
-```bash
+```shell
 g++ lib.cpp -shared -I. -Wl,--dynamic-list=lib.sym -o libso.so
 readelf --syms --relocs --use-dynamic --demangle libso.so
 ```

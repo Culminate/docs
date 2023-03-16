@@ -2,7 +2,7 @@
 title: ELF Relocation
 description: 
 published: true
-date: 2023-03-16T08:34:50.271Z
+date: 2023-03-16T08:51:52.248Z
 tags: 
 editor: markdown
 dateCreated: 2023-03-16T07:41:18.626Z
@@ -113,7 +113,7 @@ Symbol table for image contains 8 entries:
      7: 000000000000111f    12 FUNC    GLOBAL DEFAULT   12 libcall()
 ```
 
-Функции print больше нет в секции relocation, но она в global секции и её можно импортировать.
+> Функции `print()` больше нет в секции relocation, но она в global секции и её можно импортировать.{.is-info}
 
 https://sourceware.org/binutils/docs/ld/Options.html#index-_002dBsymbolic
 
@@ -122,7 +122,7 @@ https://sourceware.org/binutils/docs/ld/Options.html#index-_002dBsymbolic
 Можно создать список функций, которые будут подлежать замещению.
 
 Пример:
-Создадим файл версиий see VERSION
+Создадим файл версий see VERSION
 В нём перечислим функции. Работают шаблоны `*` - все символы, `?` - один символ.
 Для корректного деманглинга C++ нужно помещать функции в секцию extern "C++". Символы скобок являются управляющими(todo уточнить для чего они) из-за них всё имя нужно оборачивать в кавычки `""`.
 lib.sym
@@ -150,7 +150,7 @@ Symbol table for image contains 8 entries:
      7: 000000000000111f    12 FUNC    GLOBAL DEFAULT   12 libcall()
 ```
 
-В данном случае функции из библиотеки не были добавлены в секцию relocation. `call()` добавляется в relocation в `main`.
+> В данном случае функции из библиотеки не были добавлены в секцию relocation. `libcall()` добавляется в relocation в `main`.{.is-warning}
 
 https://sourceware.org/binutils/docs/ld/Options.html#index-_002d_002ddynamic_002dlist_003ddynamic_002dlist_002dfile
 https://sourceware.org/binutils/docs/ld/VERSION.html
@@ -189,6 +189,7 @@ Symbol table for image contains 7 entries:
 ```
 
 Доступной функцией в GLOBAL секции осталась только `libcall()`.
+> Функцию `print()` не сможем использовать отдельно из main.cpp.{.is-warning}
 
 https://sourceware.org/binutils/docs/ld/Options.html#index-version-script_002c-symbol-versions
 https://sourceware.org/binutils/docs/ld/VERSION.html
@@ -196,13 +197,13 @@ https://sourceware.org/binutils/docs/ld/VERSION.html
 ### static & anonymous namespace
 
 Помечая функцию `print()` static или помещая её в anonymous namespace мы исключаем функцию из экспортных(global) символов и так же она будет исключена из секции relocation.
-Но тогда мы её не сможем использовать отдельно из main.cpp.
+> Функцию `print()` не сможем использовать отдельно из main.cpp.{.is-warning}
 
 ### -fvisibility=hidden
 
 Этот флаг компиляции заставляет скрыть все функции из global секции, так же если бы они были помечены static или anonymous namespace, кроме тех функций которые помечены специальным атрибутом. Для gcc это `__attribute__ ((visibility ("default")))`.
 
-Этот флаг действует только на те функции, которые были компилированы с этим флагом. Например у вас есть статическая библиотека, компилированная без флага `-fvisibility=hidden` и вы связываете её со своей библиотекой, то символы из статической библиотеки будут в global секции.
+> Этот флаг действует только на те функции, которые были компилированы с этим флагом. Например у вас есть статическая библиотека, компилированная без флага `-fvisibility=hidden` и вы связываете её со своей библиотекой, то символы из статической библиотеки будут в global секции.{.is-warning}
 
 https://gcc.gnu.org/wiki/Visibility
 

@@ -2,7 +2,7 @@
 title: ELF Relocation
 description: 
 published: true
-date: 2023-03-16T07:41:18.626Z
+date: 2023-03-16T07:58:37.554Z
 tags: 
 editor: markdown
 dateCreated: 2023-03-16T07:41:18.626Z
@@ -55,7 +55,7 @@ void libcall()
 ```
 
 Компиляция
-```
+```shell
 # (GCC) 12.2.1 20230201
 g++ lib.cpp -shared -I. -o libso.so
 g++ main.cpp -I. -L. -lso -Wl,-rpath,\$ORIGIN -o main
@@ -73,10 +73,10 @@ call from main
 
 Это произошло потому что по умолчанию при создании библиотеки создаётся секция relocation.
 
-```
+```bash
 $ readelf --syms --relocs --use-dynamic --demangle libso.so
 ...
-Relocation section '.rela.plt' at offset 0x540 contains 2 entries:
+'PLT' relocation section at offset 0x570 contains 24 bytes:
   Offset          Info           Type           Sym. Value    Sym. Name + Addend
 000000004000  000200000007 R_X86_64_JUMP_SLO 0000000000000000 puts@GLIBC_2.2.5 + 0
 000000004008  000600000007 R_X86_64_JUMP_SLO 0000000000001119 print + 0
@@ -100,14 +100,14 @@ Symbol table for image contains 8 entries:
 
 ### -Bsymbolic
 
-Добавив линковщику(ld) флаг `-Bsymbolic`, символы из этой библиотеки не будут добавляться в секцию relocation. Но будут добавляться системные символы(и возможно символы из других библиотек, нужно проверять)
+Добавив линковщику(ld) флаг `-Bsymbolic`, символы из этой библиотеки не будут добавляться в секцию relocation. Но будут добавляться системные символы(и возможно символы из других библиотек, нужно проверять). Таким образом символы из этой библиотеки не будут замещаться сторонними.
 
 Пример:
-```
+```bash
 $ g++ lib.cpp -shared -I. -Wl,-Bsymbolic -o libso.so
 $ readelf --syms --relocs --use-dynamic --demangle libso.so
 ...
-Relocation section '.rela.plt' at offset 0x540 contains 2 entries:
+'PLT' relocation section at offset 0x570 contains 24 bytes:
   Offset          Info           Type           Sym. Value    Sym. Name + Addend
 000000004000  000200000007 R_X86_64_JUMP_SLO 0000000000000000 puts@GLIBC_2.2.5 + 0
 
@@ -115,14 +115,34 @@ Symbol table for image contains 8 entries:
    Num:    Value          Size Type    Bind   Vis      Ndx Name
 ...
      6: 0000000000001119    22 FUNC    GLOBAL DEFAULT   12 print()
-     7: 000000000000112f    12 FUNC    GLOBAL DEFAULT   12 libcall()
+     7: 000000000000111f    12 FUNC    GLOBAL DEFAULT   12 libcall()
 ```
 
-Функции print больше нет в секции relocation, но она в global секции
+Функции print больше нет в секции relocation, но она в global секции и её можно импортировать.
 
 https://sourceware.org/binutils/docs/ld/Options.html#index-_002dBsymbolic
 
-### 
+### --dynamic-list
+
+Можно создать список функций, которые будут подлежать замещению.
+
+Пример:
+lib.sym
+```
+{
+    extern "C++" {
+        "call()";
+    };
+};
+```
+
+```bash
+$ g++ lib.cpp -shared -I. -Wl,--dynamic-list=lib.sym -o libso.so
+$ readelf --syms --relocs --use-dynamic --demangle libso.so
+```
+
+https://sourceware.org/binutils/docs/ld/Options.html#index-_002d_002ddynamic_002dlist_003ddynamic_002dlist_002dfile
+https://sourceware.org/binutils/docs/ld/VERSION.html
 
 ## Links
 https://habr.com/ru/post/106107/

@@ -2,7 +2,7 @@
 title: ELF Relocation
 description: 
 published: true
-date: 2023-03-16T08:51:52.248Z
+date: 2023-03-16T13:24:13.606Z
 tags: 
 editor: markdown
 dateCreated: 2023-03-16T07:41:18.626Z
@@ -212,3 +212,4 @@ https://habr.com/ru/post/106107/
 https://www.intezer.com/blog/malware-analysis/executable-and-linkable-format-101-part-3-relocations/
 https://reverseengineering.stackexchange.com/questions/1992/what-is-plt-got
 https://maskray.me/blog/2021-05-16-elf-interposition-and-bsymbolic
+https://fasterthanli.me/series/making-our-own-executable-packer/part-11

@@ -2,7 +2,7 @@
 title: ELF Relocation
 description: 
 published: true
-date: 2023-03-16T08:33:09.710Z
+date: 2023-03-16T08:34:23.965Z
 tags: 
 editor: markdown
 dateCreated: 2023-03-16T07:41:18.626Z
@@ -16,7 +16,7 @@ dateCreated: 2023-03-16T07:41:18.626Z
 ## Пример
 
 main.cpp
-```
+```cpp
 #include <stdio.h>
 #include <lib.h>
 
@@ -33,13 +33,13 @@ int main()
 ```
 
 lib.h
-```
+```cpp
 #pragma once
 void libcall();
 ```
 
 lib.cpp
-```
+```cpp
 #include <lib.h>
 #include <stdio.h>
 
@@ -126,7 +126,7 @@ https://sourceware.org/binutils/docs/ld/Options.html#index-_002dBsymbolic
 В нём перечислим функции. Работают шаблоны `*` - все символы, `?` - один символ.
 Для корректного деманглинга C++ нужно помещать функции в секцию extern "C++". Символы скобок являются управляющими(todo уточнить для чего они) из-за них всё имя нужно оборачивать в кавычки `""`.
 lib.sym
-```
+```cpp
 {
     extern "C++" {
     		example_namespace::*;
@@ -163,7 +163,7 @@ https://sourceware.org/binutils/docs/ld/VERSION.html
 Создадим файл версиий see VERSION
 И определим что будет помещаться в global и local секции
 lib.ver
-```
+```cpp
 {
 global:
     extern "C++" {

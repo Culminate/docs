@@ -2,7 +2,7 @@
 title: ELF Relocation
 description: 
 published: true
-date: 2023-03-16T08:34:23.965Z
+date: 2023-03-16T08:34:50.271Z
 tags: 
 editor: markdown
 dateCreated: 2023-03-16T07:41:18.626Z
@@ -196,11 +196,11 @@ https://sourceware.org/binutils/docs/ld/VERSION.html
 ### static & anonymous namespace
 
 Помечая функцию `print()` static или помещая её в anonymous namespace мы исключаем функцию из экспортных(global) символов и так же она будет исключена из секции relocation.
-Но тогда мы её не сможем использовать отдельно из main.cpp
+Но тогда мы её не сможем использовать отдельно из main.cpp.
 
 ### -fvisibility=hidden
 
-Этот флаг компиляции заставляет скрыть все функции из global секции, так же если бы они были помечены static или anonymous namespace, кроме тех функций которые помечены специальным атрибутом. Для gcc это `__attribute__ ((visibility ("default")))`
+Этот флаг компиляции заставляет скрыть все функции из global секции, так же если бы они были помечены static или anonymous namespace, кроме тех функций которые помечены специальным атрибутом. Для gcc это `__attribute__ ((visibility ("default")))`.
 
 Этот флаг действует только на те функции, которые были компилированы с этим флагом. Например у вас есть статическая библиотека, компилированная без флага `-fvisibility=hidden` и вы связываете её со своей библиотекой, то символы из статической библиотеки будут в global секции.
 

@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-09T17:18:14.850Z
+date: 2023-04-09T17:35:01.707Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -119,13 +119,18 @@ group3
 
 # Ad-Hoc команды
 
+https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html#intro-adhoc
+
 Можно использовать простые сценарии из командной строки.
 Синтаксис `ansible -i <файл_хостов.txt> <группа> -m <модуль>`. Если мы задали в `ansible.cfg` переменную `inventory`, то файл хостов задавать не нужно. Если хотим запустить команду для всех хостов то пишем all.
 
 Примеры разных команд:
 
 # {.tabset}
-## ping - соединение с хостом
+## ping
+
+Cоединение с хостом и получение ответа. Не имеет ничего общего с реальной командой ping
+
 ```
 $ ansible all -m ping
 debian1 | SUCCESS => {
@@ -137,7 +142,9 @@ debian1 | SUCCESS => {
 }
 ```
 
-## setup - получение данных о хосте
+## setup
+
+Получение данных о хосте
 
 ```
 $ ansible all -m setup
@@ -154,8 +161,69 @@ debian1 | SUCCESS => {
 
 ## shell
 
+Запуск оболочки для выполнения команд
 ```
-$ ansible all -m shell -a "uptime"
+$ ansible all -m shell -a "uptime | cut -d',' -f1"
 debian1 | CHANGED | rc=0 >>
- 13:15:48 up 0 min,  1 user,  load average: 0.00, 0.00, 0.00
+ 13:20:25 up 4 min
+```
+
+## copy
+
+Копирование файла с сервера на хост
+```
+$ ansible all -m copy -a "src=data.txt dest=~"
+debian1 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": true,
+    "checksum": "22596363b3de40b06f981fb85d82312e8c0ed511",
+    "dest": "/home/debian/data.txt",
+    "gid": 1000,
+    "group": "debian",
+    "md5sum": "6f5902ac237024bdd0c176cb93063dc4",
+    "mode": "0644",
+    "owner": "debian",
+    "size": 12,
+    "src": "/home/debian/.ansible/tmp/ansible-tmp-1681061269.8191762-558-146712978543920/source",
+    "state": "file",
+    "uid": 1000
+}
+```
+
+## file
+
+Получение информации и управление файлами
+
+Смотрим файл
+```
+$ ansible all -m file -a "dest=~/data.txt"
+debian1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "gid": 1000,
+    "group": "debian",
+    "mode": "0644",
+    "owner": "debian",
+    "path": "/home/debian/data.txt",
+    "size": 12,
+    "state": "file",
+    "uid": 1000
+}
+```
+
+Удаление файла
+```
+$ ansible all -m file -a "dest=~/data.txt state=absent"
+debian1 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": true,
+    "path": "/home/debian/data.txt",
+    "state": "absent"
+}
 ```

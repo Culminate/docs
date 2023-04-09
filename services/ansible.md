@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-09T16:44:53.992Z
+date: 2023-04-09T16:45:45.753Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -108,7 +108,7 @@ ansible_port=2222 ansible_user=root ansible_password=MYPASS1234
 Примеры разных команд:
 
 # {.tabset}
-## ping
+## ping - соединение с хостом
 ```
 $ ansible all -m ping
 debian1 | SUCCESS => {
@@ -120,7 +120,7 @@ debian1 | SUCCESS => {
 }
 ```
 
-## setup
+## setup - получение данных о хосте
 
 ```
 $ ansible all -m setup

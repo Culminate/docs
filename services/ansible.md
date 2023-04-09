@@ -1,8 +1,8 @@
 ---
-title: Ansible
+title: ansible
 description: 
 published: true
-date: 2023-04-09T12:11:06.065Z
+date: 2023-04-09T12:12:09.867Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z

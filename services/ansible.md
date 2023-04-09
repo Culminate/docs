@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-09T16:34:35.031Z
+date: 2023-04-09T16:44:53.992Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -100,3 +100,37 @@ debian_host1 ansible_host=192.168.22.[1:2]
 ansible_port=2222 ansible_user=root ansible_password=MYPASS1234
 ```
 
+# Ad-Hoc команды
+
+Можно использовать простые сценарии из командной строки.
+Синтаксис `ansible -i файл_хостов.txt all -m модуль`. Если мы задали в `ansible.cfg` переменную `inventory`, то файл хостов задавать не нужно.
+
+Примеры разных команд:
+
+# {.tabset}
+## ping
+```
+$ ansible all -m ping
+debian1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+```
+
+## setup
+
+```
+$ ansible all -m setup
+debian1 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.50.201"
+        ],
+        ...
+        Большой список из параметров, которые можно использовать в сценариях
+        ...
+}
+```

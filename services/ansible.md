@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-09T16:13:49.865Z
+date: 2023-04-09T16:27:56.600Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -55,6 +55,8 @@ gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ansible.gpg &>/dev/null
 
 ## ansible.cfg
 Можно настроить конкретное окружение. Для этого создаём файл `ansible.cfg` в месте где будем запускать его.
+
+Параметры:
 - `host_key_checking` проверять fingerprint при новом подключении по ssh
 - `inventory` указать какой использовать файл инвентаризации(клиентов) по умолчанию.
 
@@ -65,11 +67,27 @@ host_key_checking = false
 inventory = hosts.txt
 ```
 
-## hosts.txt
+## hosts
 
 https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html
 
-Файл инвентаризации в нём описываются клиенты к которым будет подключаться ansible для настройки
+Файл инвентаризации в нём описываются хосты к которым будет подключаться ansible для настройки
 
+Имеет структуру ini файла, можно объединять хосты в группу и присваивать всей группе свойства
 
+## Tabs {.tabset}
+### Простой пример:
+```
+debian_host1 ansible_host=192.168.22.1 ansible_port=2222 ansible_user=root ansible_password=MYPASS1234
+```
+
+### Пример с группой и общими настройками для группы:
+```
+[my_hosts]
+debian_host1 ansible_host=192.168.22.1
+debian_host2 ansible_host=192.168.22.2
+
+[my_hosts:vars]
+ansible_port=2222 ansible_user=root ansible_password=MYPASS1234
+```
 

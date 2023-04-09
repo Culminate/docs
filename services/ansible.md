@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-09T16:45:45.753Z
+date: 2023-04-09T17:18:14.850Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -100,10 +100,27 @@ debian_host1 ansible_host=192.168.22.[1:2]
 ansible_port=2222 ansible_user=root ansible_password=MYPASS1234
 ```
 
+### Подгруппы
+```
+[group1]
+10.10.0.1
+
+[group2]
+10.10.0.2
+
+[group3]
+10.10.0.3
+
+[groupall:children]
+group1
+group2
+group3
+```
+
 # Ad-Hoc команды
 
 Можно использовать простые сценарии из командной строки.
-Синтаксис `ansible -i файл_хостов.txt all -m модуль`. Если мы задали в `ansible.cfg` переменную `inventory`, то файл хостов задавать не нужно.
+Синтаксис `ansible -i <файл_хостов.txt> <группа> -m <модуль>`. Если мы задали в `ansible.cfg` переменную `inventory`, то файл хостов задавать не нужно. Если хотим запустить команду для всех хостов то пишем all.
 
 Примеры разных команд:
 
@@ -133,4 +150,12 @@ debian1 | SUCCESS => {
         Большой список из параметров, которые можно использовать в сценариях
         ...
 }
+```
+
+## shell
+
+```
+$ ansible all -m shell -a "uptime"
+debian1 | CHANGED | rc=0 >>
+ 13:15:48 up 0 min,  1 user,  load average: 0.00, 0.00, 0.00
 ```

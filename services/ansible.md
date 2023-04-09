@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-09T12:20:15.961Z
+date: 2023-04-09T12:36:25.286Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -15,8 +15,8 @@ OS: Debian 11
 
 Работает только на linux, несмотря на то что это python.
 
-## Установка {.tabset}
-### python
+# Установка {.tabset}
+## python
 Можно установить с помощью pip
 Представлены 3 варианта
 
@@ -26,7 +26,7 @@ pip install ansible --user # устнаовка в пользовательск�
 python -m venv env && . ./env/bin/activate && pip install ansible # установка в виртуальное окружение
 ```
 
-### apt
+## apt
 
 В таком случае версия будет не самой последней.
 Добавляем репозиторий. Для debian 11 нужен ubuntu focal.
@@ -42,7 +42,9 @@ wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x93C4A3FD7BB9C36
 gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ansible.gpg &>/dev/null
 ```
 
-#
+# Настройка
+
+
 
 # Links
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-debian-11

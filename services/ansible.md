@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-09T12:15:34.707Z
+date: 2023-04-09T12:20:15.961Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -41,3 +41,8 @@ echo 'deb https://ppa.launchpadcontent.net/ansible/ansible/ubuntu focal main' | 
 wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x93C4A3FD7BB9C367" |
 gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ansible.gpg &>/dev/null
 ```
+
+#
+
+# Links
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-debian-11

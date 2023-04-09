@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-09T16:27:56.600Z
+date: 2023-04-09T16:34:35.031Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -76,16 +76,25 @@ https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html
 Имеет структуру ini файла, можно объединять хосты в группу и присваивать всей группе свойства
 
 ## Tabs {.tabset}
-### Простой пример:
+### Простой пример
 ```
 debian_host1 ansible_host=192.168.22.1 ansible_port=2222 ansible_user=root ansible_password=MYPASS1234
 ```
 
-### Пример с группой и общими настройками для группы:
+### Группа с общими настройками
 ```
 [my_hosts]
 debian_host1 ansible_host=192.168.22.1
 debian_host2 ansible_host=192.168.22.2
+
+[my_hosts:vars]
+ansible_port=2222 ansible_user=root ansible_password=MYPASS1234
+```
+
+### Использование диапазонов
+```
+[my_hosts]
+debian_host1 ansible_host=192.168.22.[1:2]
 
 [my_hosts:vars]
 ansible_port=2222 ansible_user=root ansible_password=MYPASS1234

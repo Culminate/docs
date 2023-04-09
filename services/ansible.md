@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-09T12:13:07.654Z
+date: 2023-04-09T12:15:34.707Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -13,9 +13,9 @@ dateCreated: 2023-04-09T12:11:06.065Z
 
 OS: Debian 11
 
-## Установка {.tabset}
 Работает только на linux, несмотря на то что это python.
 
+## Установка {.tabset}
 ### python
 Можно установить с помощью pip
 Представлены 3 варианта

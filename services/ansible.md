@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-10T07:07:45.964Z
+date: 2023-04-10T07:13:43.300Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -69,11 +69,10 @@ inventory = hosts.txt
 
 ## hosts
 
-https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html
+[Документация inventory_file](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html)
+[Документация по ключевым словам](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters)
 
-Файл инвентаризации в нём описываются хосты к которым будет подключаться ansible для настройки
-
-Имеет структуру ini файла, можно объединять хосты в группу и присваивать всей группе свойства
+В файле инвентаризации описываются хосты к которым будет подключаться ansible для настройки. Имеет структуру ini файла, можно объединять хосты в группу и присваивать всей группе свойства
 
 ## Tabs {.tabset}
 ### Простой пример

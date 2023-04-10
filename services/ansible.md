@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-10T07:31:57.590Z
+date: 2023-04-10T07:33:22.564Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -67,7 +67,7 @@ host_key_checking = false
 inventory = hosts.txt
 ```
 
-## hosts
+## inventory_file
 
 [Документация inventory_file](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html)
 [Документация по ключевым словам](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters)

@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-10T18:48:41.806Z
+date: 2023-04-10T18:58:37.672Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -128,7 +128,8 @@ group3
 ## Повышение привилегий
 
 Чтобы выполнить команду от имени администратора, следует добавить флаг `-b`, `--become`. По умолчанию на linux повышение привилегий производится с помощью sudo. Можно вводить пароль от sudo прямо в терминале, флаг `-K`, `--ask-become-pass` выводит диалог для ввода пароля sudo.
-Так же можно указать пользователя для повышения привилегий `--become-user` и метод повышения привилегий `--become-method` (актуальные методы `ansible-doc -t become -l`)
+Так же можно указать пользователя для повышения привилегий `--become-user` и метод повышения привилегий `--become-method` (актуальные методы `ansible-doc -t become -l`).
+Так же всё это можно указать в inventory файле с помощью переменных: `ansible_become_method`, `ansible_become_user`, `ansible_become_password`.
 
 ## Примеры разных команд
 
@@ -307,8 +308,25 @@ debian1 | CHANGED => {
 }
 ```
 
+### raw
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/raw_module.html
+
+TODO
+
+### script
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/script_module.html
+
+TODO
+
+### service
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html
+
+TODO
+
 # Playbooks (Сценарии)
 [Документация по ключевым словам](https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html)
+
+TODO
 
 # Links
 [Youtube плейлист на уроки](https://www.youtube.com/playlist?list=PLg5SS_4L6LYufspdPupdynbMQTBnZd31N)

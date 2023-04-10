@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-10T07:13:43.300Z
+date: 2023-04-10T07:31:57.590Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -135,7 +135,7 @@ group3
 Соединение с хостом и получение ответа. Не имеет ничего общего с системной командой ping
 https://docs.ansible.com/ansible/latest/collections/ansible/builtin/ping_module.html
 
-```
+```shell
 $ ansible all -m ping
 debian1 | SUCCESS => {
     "ansible_facts": {
@@ -150,7 +150,7 @@ debian1 | SUCCESS => {
 Получение данных о хосте
 https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html
 
-```
+```shell
 $ ansible all -m setup
 debian1 | SUCCESS => {
     "ansible_facts": {
@@ -167,7 +167,7 @@ debian1 | SUCCESS => {
 Запуск оболочки для выполнения команд
 https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html
 
-```
+```shell
 $ ansible all -m shell -a "uptime | cut -d',' -f1"
 debian1 | CHANGED | rc=0 >>
  13:20:25 up 4 min
@@ -177,7 +177,7 @@ debian1 | CHANGED | rc=0 >>
 Копирование файла с сервера на хост
 https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html
 
-```
+```shell
 $ ansible all -m copy -a "src=data.txt dest=~"
 debian1 | CHANGED => {
     "ansible_facts": {
@@ -203,7 +203,7 @@ debian1 | CHANGED => {
 https://docs.ansible.com/ansible/latest/collections/ansible/builtin/fetch_module.html
 
 По умолчанию создаёт директорию хоста и воссоздаёт дерево куда положит файл
-```
+```shell
 $ ansible all -m fetch -a "src=/etc/hosts dest="
 debian1 | CHANGED => {
     "changed": true,
@@ -216,7 +216,7 @@ debian1 | CHANGED => {
 ```
 
 Если добавить `flat=yes`, то файл будет записан по названию переменной dest, но имейте в виду то что при множестве хостов файл будет перезаписан, так что нужно добавлять к ним идентификацию, например `inventory_hostname`
-```
+```shell
 $ ansible all -m fetch -a "src=/etc/hosts dest=~/lapidus-{{ inventory_hostname }} flat=yes"
 debian1 | CHANGED => {
     "changed": true,
@@ -233,7 +233,7 @@ debian1 | CHANGED => {
 https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html
 
 Получаем информацию о файле или директории
-```
+```shell
 $ ansible all -m file -a "dest=~/data.txt"
 debian1 | SUCCESS => {
     "ansible_facts": {
@@ -252,7 +252,7 @@ debian1 | SUCCESS => {
 ```
 
 Удаление файла или директории
-```
+```shell
 $ ansible all -m file -a "dest=~/data.txt state=absent"
 debian1 | CHANGED => {
     "ansible_facts": {
@@ -268,7 +268,7 @@ debian1 | CHANGED => {
 Менеджер пакетов, сам определяет на системе менеджер пакетов и устанавливает с помощью него пакет.
 https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html
 
-```
+```shell
 $ ansible all -m package -a "name=tree state=present" -b
 debian1 | CHANGED => {
     "ansible_facts": {
@@ -296,7 +296,7 @@ debian1 | CHANGED => {
 ### reboot
 Перезагружаем машину и ждём пока она снова появится в сети
 
-```
+```shell
 $ ansible all -m reboot -b
 debian1 | CHANGED => {
     "changed": true,

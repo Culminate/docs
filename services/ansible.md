@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-09T17:35:01.707Z
+date: 2023-04-10T06:19:11.945Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -119,17 +119,18 @@ group3
 
 # Ad-Hoc команды
 
-https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html#intro-adhoc
+[Документация по Ad-Hoc](https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html#intro-adhoc)
+[Документация по встроенным командам](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/)
 
 Можно использовать простые сценарии из командной строки.
 Синтаксис `ansible -i <файл_хостов.txt> <группа> -m <модуль>`. Если мы задали в `ansible.cfg` переменную `inventory`, то файл хостов задавать не нужно. Если хотим запустить команду для всех хостов то пишем all.
 
-Примеры разных команд:
+## Примеры разных команд
 
-# {.tabset}
-## ping
-
+## Tabs {.tabset}
+### ping
 Cоединение с хостом и получение ответа. Не имеет ничего общего с реальной командой ping
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/ping_module.html
 
 ```
 $ ansible all -m ping
@@ -142,9 +143,9 @@ debian1 | SUCCESS => {
 }
 ```
 
-## setup
-
+### setup
 Получение данных о хосте
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html
 
 ```
 $ ansible all -m setup
@@ -159,18 +160,20 @@ debian1 | SUCCESS => {
 }
 ```
 
-## shell
-
+### shell
 Запуск оболочки для выполнения команд
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html
+
 ```
 $ ansible all -m shell -a "uptime | cut -d',' -f1"
 debian1 | CHANGED | rc=0 >>
  13:20:25 up 4 min
 ```
 
-## copy
-
+### copy
 Копирование файла с сервера на хост
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html
+
 ```
 $ ansible all -m copy -a "src=data.txt dest=~"
 debian1 | CHANGED => {
@@ -192,11 +195,41 @@ debian1 | CHANGED => {
 }
 ```
 
-## file
+### fetch
+Копирование файла с хоста на сервер
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/fetch_module.html
 
-Получение информации и управление файлами
+По умолчанию создаёт директорию хоста и воссоздаёт дерево куда положит файл
+```
+$ ansible all -m fetch -a "src=/etc/hosts dest="
+debian1 | CHANGED => {
+    "changed": true,
+    "checksum": "d5234cedd3184001eae464139064341046ba4afc",
+    "dest": "/home/debian/user/ansible/debian1/etc/hosts",
+    "md5sum": "9c8cc077c58b8b1fcfdee1050f4051bf",
+    "remote_checksum": "d5234cedd3184001eae464139064341046ba4afc",
+    "remote_md5sum": null
+}
+```
 
-Смотрим файл
+Если добавить `flat=yes` то файл будет записан как есть, но имейте ввиду то что при множестве хостов файл будет перезаписан, так что нужно добавлять к ним идентификацию, например `inventory_hostname`
+```
+$ ansible all -m fetch -a "src=/etc/hosts dest=~/lapidus-{{ inventory_hostname }} flat=yes"
+debian1 | CHANGED => {
+    "changed": true,
+    "checksum": "d5234cedd3184001eae464139064341046ba4afc",
+    "dest": "/home/debian/lapidus-debian1",
+    "md5sum": "9c8cc077c58b8b1fcfdee1050f4051bf",
+    "remote_checksum": "d5234cedd3184001eae464139064341046ba4afc",
+    "remote_md5sum": null
+}
+```
+
+### file
+Получение информации и управление файлами и директориями
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html
+
+Получаем информацию о файле или директории
 ```
 $ ansible all -m file -a "dest=~/data.txt"
 debian1 | SUCCESS => {
@@ -215,7 +248,7 @@ debian1 | SUCCESS => {
 }
 ```
 
-Удаление файла
+Удаление файла или директории
 ```
 $ ansible all -m file -a "dest=~/data.txt state=absent"
 debian1 | CHANGED => {
@@ -227,3 +260,36 @@ debian1 | CHANGED => {
     "state": "absent"
 }
 ```
+
+### package
+Менеджер пакетов, сам определяет на системе менеджер пакетов и устанавливает с помощью него пакет.
+
+```
+$ ansible all -m package -a "name=tree state=present" -b
+debian1 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "cache_update_time": 1681107237,
+    "cache_updated": false,
+    "changed": true,
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "...",
+    "stdout_lines": [
+        "Reading package lists...",
+        "Building dependency tree...",
+        "Reading state information...",
+        "The following NEW packages will be installed:",
+        "  tree",
+        "0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.",
+        "Need to get 49.6 kB of archives.",
+        ...
+    ]
+}
+```
+
+# Сценарии
+
+# Links
+[Youtube плейлист на уроки](https://www.youtube.com/playlist?list=PLg5SS_4L6LYufspdPupdynbMQTBnZd31N)

@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-10T07:05:25.959Z
+date: 2023-04-10T07:07:45.964Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -58,7 +58,7 @@ gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ansible.gpg &>/dev/null
 
 Параметры:
 - `host_key_checking` проверять fingerprint при новом подключении по ssh
-- `inventory` указать какой использовать файл инвентаризации(клиентов) по умолчанию.
+- `inventory` указать какой использовать inventory_file(файл хостов) по умолчанию.
 
 `ansible.cfg`
 ```

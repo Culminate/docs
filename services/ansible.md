@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-10T07:33:22.564Z
+date: 2023-04-10T07:36:23.667Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -67,9 +67,9 @@ host_key_checking = false
 inventory = hosts.txt
 ```
 
-## inventory_file
+## Inventory file
 
-[Документация inventory_file](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html)
+[Документация](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html)
 [Документация по ключевым словам](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters)
 
 В файле инвентаризации описываются хосты к которым будет подключаться ansible для настройки. Имеет структуру ini файла, можно объединять хосты в группу и присваивать всей группе свойства

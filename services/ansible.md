@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-10T06:19:11.945Z
+date: 2023-04-10T07:05:25.959Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -123,13 +123,17 @@ group3
 [Документация по встроенным командам](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/)
 
 Можно использовать простые сценарии из командной строки.
-Синтаксис `ansible -i <файл_хостов.txt> <группа> -m <модуль>`. Если мы задали в `ansible.cfg` переменную `inventory`, то файл хостов задавать не нужно. Если хотим запустить команду для всех хостов то пишем all.
+Синтаксис `ansible -i <файл_хостов.txt> <группа> -m <модуль>`. Если мы задали в `ansible.cfg` переменную `inventory`, то файл хостов задавать не нужно. Если хотим запустить команду для всех хостов, то пишем all.
+
+## Повышение привилегий
+
+
 
 ## Примеры разных команд
 
 ## Tabs {.tabset}
 ### ping
-Cоединение с хостом и получение ответа. Не имеет ничего общего с реальной командой ping
+Соединение с хостом и получение ответа. Не имеет ничего общего с системной командой ping
 https://docs.ansible.com/ansible/latest/collections/ansible/builtin/ping_module.html
 
 ```
@@ -212,7 +216,7 @@ debian1 | CHANGED => {
 }
 ```
 
-Если добавить `flat=yes` то файл будет записан как есть, но имейте ввиду то что при множестве хостов файл будет перезаписан, так что нужно добавлять к ним идентификацию, например `inventory_hostname`
+Если добавить `flat=yes`, то файл будет записан по названию переменной dest, но имейте в виду то что при множестве хостов файл будет перезаписан, так что нужно добавлять к ним идентификацию, например `inventory_hostname`
 ```
 $ ansible all -m fetch -a "src=/etc/hosts dest=~/lapidus-{{ inventory_hostname }} flat=yes"
 debian1 | CHANGED => {
@@ -263,6 +267,7 @@ debian1 | CHANGED => {
 
 ### package
 Менеджер пакетов, сам определяет на системе менеджер пакетов и устанавливает с помощью него пакет.
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/package_module.html
 
 ```
 $ ansible all -m package -a "name=tree state=present" -b
@@ -289,7 +294,20 @@ debian1 | CHANGED => {
 }
 ```
 
-# Сценарии
+### reboot
+Перезагружаем машину и ждём пока она снова появится в сети
+
+```
+$ ansible all -m reboot -b
+debian1 | CHANGED => {
+    "changed": true,
+    "elapsed": 25,
+    "rebooted": true
+}
+```
+
+# Playbooks (Сценарии)
+[Документация по ключевым словам](https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html)
 
 # Links
 [Youtube плейлист на уроки](https://www.youtube.com/playlist?list=PLg5SS_4L6LYufspdPupdynbMQTBnZd31N)

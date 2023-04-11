@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-11T12:09:01.288Z
+date: 2023-04-11T12:11:17.314Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -328,13 +328,23 @@ https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.
 
 TODO
 
-## Условия и циклы
+## Условия
 https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_conditionals.html
+
+TODO
+
+## Циклы
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_loops.html
 
 TODO
 
 ## Переменные
 https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html
+
+TODO
+
+## Фильтры, манипуляции с данными
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_filters.html
 
 TODO
 

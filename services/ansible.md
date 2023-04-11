@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-10T18:58:37.672Z
+date: 2023-04-11T12:09:01.288Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -324,7 +324,17 @@ https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_modu
 TODO
 
 # Playbooks (Сценарии)
-[Документация по ключевым словам](https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html)
+https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html
+
+TODO
+
+## Условия и циклы
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_conditionals.html
+
+TODO
+
+## Переменные
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html
 
 TODO
 

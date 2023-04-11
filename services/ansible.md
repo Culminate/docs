@@ -2,7 +2,7 @@
 title: ansible
 description: 
 published: true
-date: 2023-04-11T12:11:17.314Z
+date: 2023-04-11T14:31:46.899Z
 tags: 
 editor: markdown
 dateCreated: 2023-04-09T12:11:06.065Z
@@ -345,6 +345,11 @@ TODO
 
 ## Фильтры, манипуляции с данными
 https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_filters.html
+
+TODO
+
+## Перехват ошибок
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_error_handling.html
 
 TODO
 

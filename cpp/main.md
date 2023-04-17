@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2023-02-01T06:24:35.825Z
+date: 2023-04-17T05:41:55.646Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -136,7 +136,8 @@ https://en.cppreference.com/w/cpp/memory/weak_ptr
 
 TODO
 
-# l-values и r-values
+# Категории выражений
+## l-values & r-values
 
 В языке C++ все переменные являются l-values. l-value — это значение, которое имеет свой собственный адрес в памяти. Поскольку все переменные имеют адреса, то они все являются l-values. l от слова «left», так как только значения l-values могут находиться в левой стороне в операциях присваивания (в противном случае, мы получим ошибку). Например, стейтмент 9 = 10; вызовет ошибку компилятора, так как 9 не является l-value. Число 9 не имеет своего адреса в памяти и, таким образом, мы ничего не можем ему присвоить (9 = 9 и ничего здесь не изменить).
 
@@ -144,7 +145,16 @@ TODO
 
 https://pvs-studio.com/ru/blog/terms/6517/
 
-# Мультипоточность
+## RVO & NRVO
+https://pvs-studio.ru/ru/blog/terms/6516/
+
+## Универсальные ссылки
+
+https://habr.com/ru/post/157961/
+
+TODO
+
+# Многопоточность
 
 https://en.cppreference.com/w/cpp/atomic/atomic
 https://habr.com/ru/post/517918/
@@ -154,7 +164,7 @@ https://habr.com/ru/post/517918/
 - std::condition_variable
 - std::counting_semaphore
 - std::binary_semaphore
-- асинхронное програмирование
+- асинхронное программирование
     - std::promise
     - std::future
     - std::async
@@ -170,7 +180,7 @@ https://habr.com/ru/post/517918/
 https://habr.com/ru/post/328348/
 https://habr.com/ru/post/195948/
 
-# Мутабельность mutable
+# Mutable
 
 https://habr.com/ru/company/infopulse/blog/341264/
 
@@ -184,13 +194,7 @@ TODO
 
 # Шаблоны
 
-## Частичная специлизация шаблонов & SFINAE
-
-TODO
-
-## Универсальные ссылки
-
-https://habr.com/ru/post/157961/
+## Частичная специализация шаблонов & SFINAE
 
 TODO
 
@@ -215,7 +219,7 @@ https://opensource.com/article/19/4/interprocess-communication-linux-storage
 https://opensource.com/article/19/4/interprocess-communication-linux-channels
 https://www.boost.org/doc/libs/1_74_0/doc/html/interprocess.html
 
-# Новвоведения стандартов
+# Нововведения стандартов
 
 https://github.com/AnthonyCalandra/modern-cpp-features
 https://en.cppreference.com/w/cpp/compiler_support

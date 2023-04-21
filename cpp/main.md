@@ -2,7 +2,7 @@
 title: cpp
 description: 
 published: true
-date: 2023-04-17T05:41:55.646Z
+date: 2023-04-21T12:50:01.413Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-11T07:55:15.284Z
@@ -255,6 +255,8 @@ https://en.cppreference.com/w/cpp/compiler_support
 - UTF-8 (u8) символьные литералы.
 
 ## C++20
+
+- https://en.cppreference.com/w/cpp/language/default_comparisons
 
 TODO
 

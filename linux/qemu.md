@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-07-04T12:06:44.326Z
+date: 2023-07-04T12:52:24.473Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -28,19 +28,26 @@ sudo systemctl enable --now libvirtd.service
 	newgrp libvirt
 	sudo systemctl restart libvirtd.service
 	```
+  
+# Запускаем сеть
+
+`virsh net-start default` Запускаем сеть по умолчанию, после перезагруки она будет выключена.
+`virsh net-autostart default` Добавляем сеть по умолчанию в автозагрузку.
+`virsh net-list --all` Список сетей со статусами:
+
+```
+ Name      State      Autostart   Persistent
+----------------------------------------------
+ default   active       yes          yes
+
+```
+
 
 # Запуск
 
 Запускаем `virt-manager` из консоли, либо из меню `Virtual Machine Manager`
 
-# Проблемы
 
-## network 'default' is not active
-
-Нужно добавить сеть в автозагрузку `virsh net-autostart default`
-
-`virsh net-list --all` Список сетей со статусами
-`virsh net-start default` Включить сеть по умолчанию
 # links
 
 https://computingforgeeks.com/install-kvm-qemu-virt-manager-arch-manjar/

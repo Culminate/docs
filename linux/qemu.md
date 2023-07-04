@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-07-04T12:54:24.793Z
+date: 2023-07-04T12:54:35.212Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -52,4 +52,3 @@ sudo systemctl enable --now libvirtd.service
 
 https://christitus.com/vm-setup-in-linux/
 https://computingforgeeks.com/install-kvm-qemu-virt-manager-arch-manjar/
-https://www.reddit.com/r/VFIO/comments/6iwth1/network_default_is_not_active_after_every/

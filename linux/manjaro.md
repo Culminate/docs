@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-06-06T08:59:36.003Z
+date: 2023-07-14T04:51:54.807Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -32,4 +32,13 @@ yay -Rcnsu <приложение>
 
 ```
 yay -Qqem
+```
+
+## Пересобрать все AUR приложения после обновления
+
+Скачиваем [rebuild-detector](https://github.com/maximbaz/rebuild-detector) и передаём `yay` вывод из него.
+
+```
+yay -S rebuild-detector
+yay -S --rebuild --answerclean A --answerdiff N $(checkrebuild | cut -f2)
 ```

@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-07-14T04:51:54.807Z
+date: 2023-07-14T04:54:01.556Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -42,3 +42,5 @@ yay -Qqem
 yay -S rebuild-detector
 yay -S --rebuild --answerclean A --answerdiff N $(checkrebuild | cut -f2)
 ```
+
+P.S. Поидее там уже стоит хук на pacman но работает он в ограниченном количестве случаев.

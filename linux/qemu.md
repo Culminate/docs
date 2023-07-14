@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-07-04T12:54:35.212Z
+date: 2023-07-14T11:48:32.363Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -47,8 +47,17 @@ sudo systemctl enable --now libvirtd.service
 
 Запускаем `virt-manager` из консоли, либо из меню `Virtual Machine Manager`
 
+# Полезное
+## Преобразование vmdk (vbox, vmware) образа в qow2 (qemu)
 
-# links
+Если это `.ova`, то распаковываем его `tar -xvf appliance.ova`
+
+Преобразуем
+```
+qemu-img convert -O qcow2 box-disk.vmdk box-disk.qcow2
+```
+
+# Links
 
 https://christitus.com/vm-setup-in-linux/
 https://computingforgeeks.com/install-kvm-qemu-virt-manager-arch-manjar/

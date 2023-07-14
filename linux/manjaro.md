@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-07-14T04:54:01.556Z
+date: 2023-07-14T05:03:08.139Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -43,4 +43,8 @@ yay -S rebuild-detector
 yay -S --rebuild --answerclean A --answerdiff N $(checkrebuild | cut -f2)
 ```
 
-P.S. Поидее там уже стоит хук на pacman но работает он в ограниченном количестве случаев.
+P.S. после установки rebuild-detector уже стоит хук на pacman но работает он в ограниченном количестве случаев.
+
+# Links
+
+https://wiki.archlinux.org/title/pacman

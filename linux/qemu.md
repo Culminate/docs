@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-07-14T11:48:32.363Z
+date: 2023-07-14T11:49:16.163Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -56,6 +56,8 @@ sudo systemctl enable --now libvirtd.service
 ```
 qemu-img convert -O qcow2 box-disk.vmdk box-disk.qcow2
 ```
+
+Создаём новую виртуальную машину и импортируем диск.
 
 # Links
 

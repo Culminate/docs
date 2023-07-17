@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-07-17T06:18:09.044Z
+date: 2023-07-17T06:29:32.404Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -82,6 +82,13 @@ virsh  net-edit  $NETWORK_NAME
   <host mac='52:54:00:6c:3c:02' name='vm2' ip='192.168.122.12'/>
   <host mac='52:54:00:6c:3c:03' name='vm3' ip='192.168.122.12'/>
 </dhcp>
+```
+
+Перезапустить виртуальную сеть
+
+```
+virsh  net-destroy  $NETWORK_NAME
+virsh  net-start    $NETWORK_NAME
 ```
 
 # Links

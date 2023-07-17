@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-07-17T06:33:34.881Z
+date: 2023-07-17T10:35:30.652Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -76,10 +76,7 @@ virsh  net-edit  $NETWORK_NAME
 ### Вариант 1
 
 ```
-virsh net-update default add ip-dhcp-host \
-      "<host mac='52:54:00:00:00:01' \
-       name='bob' ip='192.168.122.45' />" \
-       --live --config
+virsh net-update default add ip-dhcp-host "<host mac='52:54:00:00:00:01' name='bob' ip='192.168.122.45' />" --live --config
 ```
 
 ### Вариант 2

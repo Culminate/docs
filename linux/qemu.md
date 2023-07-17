@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-07-17T06:29:32.404Z
+date: 2023-07-17T06:33:03.140Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -73,6 +73,17 @@ virsh  net-list
 virsh  net-edit  $NETWORK_NAME
 ```
 
+### Вариант 1
+
+```
+virsh net-update default add ip-dhcp-host \
+      "<host mac='52:54:00:00:00:01' \
+       name='bob' ip='192.168.122.45' />" \
+       --live --config
+```
+
+### Вариант 2
+
 Находим секцию dhcp и добавляем туда `<host mac='' name='' ip=''/>`, например:
 
 ```
@@ -90,6 +101,8 @@ virsh  net-edit  $NETWORK_NAME
 virsh  net-destroy  $NETWORK_NAME
 virsh  net-start    $NETWORK_NAME
 ```
+
+
 
 # Links
 

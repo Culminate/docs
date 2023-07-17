@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-07-17T06:33:03.140Z
+date: 2023-07-17T06:33:34.881Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -106,5 +106,6 @@ virsh  net-start    $NETWORK_NAME
 
 # Links
 
+https://wiki.libvirt.org
 https://christitus.com/vm-setup-in-linux/
 https://computingforgeeks.com/install-kvm-qemu-virt-manager-arch-manjar/

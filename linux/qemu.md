@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-07-14T11:49:16.163Z
+date: 2023-07-17T06:18:09.044Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -58,6 +58,31 @@ qemu-img convert -O qcow2 box-disk.vmdk box-disk.qcow2
 ```
 
 Создаём новую виртуальную машину и импортируем диск.
+
+## Установить фиксированный dhcp адрес для виртуальной машины
+
+Ищем макадресс вирутальной машины
+
+```
+virsh  dumpxml  $VM_NAME | grep 'mac address'
+```
+
+Выбираем необходимую сеть и редактируем её, например `default`
+```
+virsh  net-list
+virsh  net-edit  $NETWORK_NAME
+```
+
+Находим секцию dhcp и добавляем туда `<host mac='' name='' ip=''/>`, например:
+
+```
+<dhcp>
+  <range start='192.168.122.100' end='192.168.122.254'/>
+  <host mac='52:54:00:6c:3c:01' name='vm1' ip='192.168.122.11'/>
+  <host mac='52:54:00:6c:3c:02' name='vm2' ip='192.168.122.12'/>
+  <host mac='52:54:00:6c:3c:03' name='vm3' ip='192.168.122.12'/>
+</dhcp>
+```
 
 # Links
 

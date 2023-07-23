@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-07-14T05:03:08.139Z
+date: 2023-07-23T13:35:02.057Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -32,6 +32,12 @@ yay -Rcnsu <приложение>
 
 ```
 yay -Qqem
+```
+
+## Найти пакет по файлу
+
+```
+yay -Qo file.extension
 ```
 
 ## Пересобрать все AUR приложения после обновления

@@ -1,14 +1,14 @@
 ---
-title: ELF Relocation
+title: Shared Library ELF Relocation
 description: 
 published: true
-date: 2023-03-16T13:24:13.606Z
+date: 2023-08-03T10:47:09.569Z
 tags: 
 editor: markdown
 dateCreated: 2023-03-16T07:41:18.626Z
 ---
 
-# ELF Relocation
+# Shared Library ELF Relocation
 
 По умолчанию в разделяемых библиотеках включены перенаправления(relocations).
 Они позволяют оптимизировать процесс поиска символов функций, чтобы не искать их заново для каждой новой функции в разделяемой библиотеке.

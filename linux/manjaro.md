@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-08-14T09:10:34.988Z
+date: 2023-08-14T09:11:39.750Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -43,7 +43,9 @@ yay -Qqem
 ## Найти пакет по файлу
 
 ```
-yay -Qo file.extension
+yay -Qo <file> # Ищет в установленных приложениях
+yay -F <file> # Ищет во всех пакетах репозитория
+yay -Fx <regex> # Ищет во всех пакетах репозитория по регулярному выражению
 ```
 
 ## Пересобрать все AUR приложения после обновления

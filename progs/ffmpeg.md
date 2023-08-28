@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: true
-date: 2023-08-28T14:23:08.878Z
+date: 2023-08-28T14:25:28.048Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-28T14:22:13.121Z
@@ -21,7 +21,7 @@ ffmpeg -i input.mp4 \
 * [fps](https://ffmpeg.org/ffmpeg-filters.html#fps) filter sets the frame rate. A rate of 10 frames per second is used in the example.
 * [scale](https://ffmpeg.org/ffmpeg-filters.html#scale) filter will resize the output to 320 pixels wide and automatically determine the height while preserving the aspect ratio. The lanczos [scaling algorithm](https://ffmpeg.org/ffmpeg-scaler.html) is used in this example.
 * [palettegen](https://ffmpeg.org/ffmpeg-filters.html#palettegen) and [paletteuse](https://ffmpeg.org/ffmpeg-filters.html#paletteuse) filters will generate and use a custom palette generated from your input. These filters have many options, so refer to the links for a list of all available options and values. Also see the **Advanced options** section below.
-* [split](https://ffmpeg.org/ffmpeg-filters.html#split) filter will allow everything to be done in one command and avoids having to create a temporary PNG file of the palette.
+* [split](https://ffmpeg.org/ffmpeg-filters.html#split_002c-asplit) filter will allow everything to be done in one command and avoids having to create a temporary PNG file of the palette.
 * Control looping with `-loop` output option but the values are confusing. A value of `0` is infinite looping, `-1` is no looping, and `1` will loop once meaning it will play twice. So a value of 10 will cause the GIF to play 11 times.
 
 See [High quality GIF with FFmpeg](http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html) for explanations, example images, and more detailed info for advanced usage.

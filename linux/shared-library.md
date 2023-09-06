@@ -2,7 +2,7 @@
 title: Shared library
 description: 
 published: true
-date: 2023-08-03T11:54:12.691Z
+date: 2023-09-06T09:10:26.816Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-31T11:06:00.958Z
@@ -24,3 +24,4 @@ dateCreated: 2023-07-31T11:06:00.958Z
 https://amir.rachum.com/shared-libraries/
 https://seclists.org/fulldisclosure/2010/Oct/257
 http://chenweixiang.github.io/2015/12/18/linux-series-05-libraries.html
+https://community.broadcom.com/symantecenterprise/viewdocument/dynamic-linking-in-linux-and-window-1?CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68&tab=librarydocuments

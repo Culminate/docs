@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-08-14T09:11:39.750Z
+date: 2023-09-26T07:50:25.199Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -19,6 +19,10 @@ dateCreated: 2023-06-06T08:03:23.678Z
 ## Долго запускаются приложения
 
 Удалить `xdg-desktop-portal-gnome`
+
+## Не видит аудиокарту (нет звука)
+
+Установить `sof-firmware`
 
 # Полезное
 

@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-09-27T10:06:18.337Z
+date: 2023-09-27T10:26:58.659Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -31,7 +31,7 @@ sudo systemctl enable --now libvirtd.service
   
 # Настройка подключения к системному сокету
 
-По умолчанию `virsh` подключается к пользовательской сессии `qemu:///session`, а она не позвляет управлять сетевыми подключениями. Поэтому нужно использовать несколько представленных путей:
+По умолчанию `virsh` подключается к пользовательской сессии `qemu:///session`, а она не позвляет управлять сетевыми подключениями. Можно использовать несколько представленных путей:
 - Запускать через `sudo virsh`
 - Указывать системный сокет через аргумент `virsh --connect qemu:///system`
 - Редактировать системный конфиг `/etc/libvirt/libvirt.conf` и указать там `uri_default = "qemu:///system"`
@@ -50,7 +50,6 @@ sudo systemctl enable --now libvirtd.service
  default   active       yes          yes
 
 ```
-
 
 # Запуск
 
@@ -108,10 +107,21 @@ sudo virsh net-destroy $NETWORK_NAME
 sudo virsh net-start $NETWORK_NAME
 ```
 
+## Используемые пути
 
+- `/etc/libvirt/`
+  - `/etc/libvirt/libvirt.conf` - клиент
+  - `/etc/libvirt/libvirtd.conf` - сервер
+  - `/etc/libvirt/storage/` - хранилища
+  - `/etc/libvirt/qemu/` - конфиги виртуальных машин
+  - `/etc/libvirt/qemu/networks` - сети
+- `/var/lib/libvirt/`
+  - `/var/lib/libvirt/images` - хранилище дисков виртуальных машин по умолчанию
+  - `/var/lib/libvirt/qemu` - хранилище временной информации (снапшоты, снимки RAM)
 
 # Links
 
 https://wiki.libvirt.org
 https://christitus.com/vm-setup-in-linux/
 https://computingforgeeks.com/install-kvm-qemu-virt-manager-arch-manjar/
+https://serverfault.com/questions/803283/how-do-i-list-virsh-networks-without-sudo

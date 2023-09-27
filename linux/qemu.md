@@ -2,7 +2,7 @@
 title: Qemu
 description: 
 published: true
-date: 2023-07-17T10:35:30.652Z
+date: 2023-09-27T10:06:18.337Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-04T12:06:44.326Z
@@ -29,11 +29,20 @@ sudo systemctl enable --now libvirtd.service
 	sudo systemctl restart libvirtd.service
 	```
   
+# Настройка подключения к системному сокету
+
+По умолчанию `virsh` подключается к пользовательской сессии `qemu:///session`, а она не позвляет управлять сетевыми подключениями. Поэтому нужно использовать несколько представленных путей:
+- Запускать через `sudo virsh`
+- Указывать системный сокет через аргумент `virsh --connect qemu:///system`
+- Редактировать системный конфиг `/etc/libvirt/libvirt.conf` и указать там `uri_default = "qemu:///system"`
+- Редактировать пользовательский конфиг `~/.config/libvirt/libvirt.conf` и указать там `uri_default = "qemu:///system"`
+- Указать переменную окружения `LIBVIRT_DEFAULT_URI=qemu:///system`
+
 # Запускаем сеть
 
-`virsh net-start default` Запускаем сеть по умолчанию, после перезагруки она будет выключена.
-`virsh net-autostart default` Добавляем сеть по умолчанию в автозагрузку.
-`virsh net-list --all` Список сетей со статусами:
+`sudo virsh net-start default` Запускаем сеть по умолчанию, после перезагруки она будет выключена.
+`sudo virsh net-autostart default` Добавляем сеть по умолчанию в автозагрузку.
+`sudo virsh net-list --all` Список сетей со статусами:
 
 ```
  Name      State      Autostart   Persistent
@@ -61,22 +70,22 @@ qemu-img convert -O qcow2 box-disk.vmdk box-disk.qcow2
 
 ## Установить фиксированный dhcp адрес для виртуальной машины
 
-Ищем макадресс вирутальной машины
+Ищем макадрес вирутальной машины
 
 ```
-virsh  dumpxml  $VM_NAME | grep 'mac address'
+sudo virsh dumpxml  $VM_NAME | grep 'mac address'
 ```
 
 Выбираем необходимую сеть и редактируем её, например `default`
 ```
-virsh  net-list
-virsh  net-edit  $NETWORK_NAME
+sudo virsh net-list
+sudo virsh net-edit $NETWORK_NAME
 ```
 
 ### Вариант 1
 
 ```
-virsh net-update default add ip-dhcp-host "<host mac='52:54:00:00:00:01' name='bob' ip='192.168.122.45' />" --live --config
+sudo virsh net-update default add ip-dhcp-host "<host mac='52:54:00:00:00:01' name='bob' ip='192.168.122.45' />" --live --config
 ```
 
 ### Вариант 2
@@ -95,8 +104,8 @@ virsh net-update default add ip-dhcp-host "<host mac='52:54:00:00:00:01' name='b
 Перезапустить виртуальную сеть
 
 ```
-virsh  net-destroy  $NETWORK_NAME
-virsh  net-start    $NETWORK_NAME
+sudo virsh net-destroy $NETWORK_NAME
+sudo virsh net-start $NETWORK_NAME
 ```
 
 

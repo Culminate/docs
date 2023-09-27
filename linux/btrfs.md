@@ -2,7 +2,7 @@
 title: BTRFS
 description: 
 published: true
-date: 2023-07-05T10:17:48.582Z
+date: 2023-09-27T18:02:11.450Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-05T10:16:50.136Z
@@ -37,3 +37,8 @@ Label: none  uuid: c98bd0f4-e67e-46b7-94d5-6930652fb5dc
    ```
    sudo btrfs filesystem resize -100M /your-space; sudo btrfs filesystem resize +100M /your-space
    ```
+
+# ввостановление файлов со сломаного раздела
+
+https://superuser.com/questions/1131909/btrfs-is-it-possible-to-switch-to-another-tree-root
+https://www.linux.org.ru/forum/general/15960995

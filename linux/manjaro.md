@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-09-29T10:32:28.200Z
+date: 2023-09-29T10:43:52.427Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -86,26 +86,26 @@ sudo systemctl enable --now systemd-resolved
 sudo systemctl restart NetworkManager
 ```
 
-Проверяем, что всё работает нормально. 
-
-В `/etc/resolv.conf` должен быть указан `127.0.0.53`
-
-Включение DNSOverTLS в подключении 
-
+Включение DNSOverTLS в подключении:
 ```
-nmcli connection modify MyConnection connection.dns-over-tls 0
+nmcli connection modify MyConnection connection.dns-over-tls 2
 ```
 
-Либо в конфиге для всех подключений
-
+Либо в конфиге для всех подключений:
 ```
 [connection]
-connection.dns-over-tls=2
+connection.dns-over-tls=1
 ```
 
 > "yes" (2) use DNSOverTls and disabled fallback, "opportunistic" (1) use DNSOverTls but allow fallback to unencrypted resolution, "no" (0) don't ever use DNSOverTls.
 
 https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html
+
+### Проверка
+- В `/etc/resolv.conf` должен быть указан `127.0.0.53`.
+- Проверяем что systemd-resolve работает на порту `sudo ss -lntp | grep '\(State\|:53 \)'`
+- Проверяем  `resolvectl status`. Тут в конкретном подключении должен быть указан `DNSOverTLS=opportunistic` или `+DNSOverTLS`
+- Проверка wireshark'ом, в проходящих пакетах не должно быть протокола DNS
 
 ### Работа dns отдельно от NetworkManager
 

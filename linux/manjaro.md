@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-09-29T10:28:59.998Z
+date: 2023-09-29T10:32:28.200Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -89,6 +89,21 @@ sudo systemctl restart NetworkManager
 Проверяем, что всё работает нормально. 
 
 В `/etc/resolv.conf` должен быть указан `127.0.0.53`
+
+Включение DNSOverTLS в подключении 
+
+```
+nmcli connection modify MyConnection connection.dns-over-tls 0
+```
+
+Либо в конфиге для всех подключений
+
+```
+[connection]
+connection.dns-over-tls=2
+```
+
+> "yes" (2) use DNSOverTls and disabled fallback, "opportunistic" (1) use DNSOverTls but allow fallback to unencrypted resolution, "no" (0) don't ever use DNSOverTls.
 
 https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html
 

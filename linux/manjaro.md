@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-09-29T10:04:04.625Z
+date: 2023-09-29T10:28:59.998Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -68,6 +68,50 @@ yay -S --rebuild --answerclean A --answerdiff N $(checkrebuild | cut -f2)
 ```
 
 P.S. после установки rebuild-detector уже стоит хук на pacman но работает он в ограниченном количестве случаев.
+
+## Включить DNSOverTLS в NetworkManager
+
+Включаем работу DNS через `systemd-resolved`.
+
+Создаём файл
+`/etc/NetworkManager/conf.d/10-dns-systemd-resolved.conf`
+```
+[main]
+dns=systemd-resolved
+```
+
+Запускаем сервисы
+```
+sudo systemctl enable --now systemd-resolved
+sudo systemctl restart NetworkManager
+```
+
+Проверяем, что всё работает нормально. 
+
+В `/etc/resolv.conf` должен быть указан `127.0.0.53`
+
+https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html
+
+### Работа dns отдельно от NetworkManager
+
+Можно включить принудительно в конфиге необходимые настройки, но если требуется, чтобы всеми настройками управлял NetworkManager, то все настройки должны быть закоментированы
+`/etc/systemd/resolved.conf`
+```
+[Resolve]
+DNS=1.1.1.1 9.9.9.9
+DNSOverTLS=yes
+DNSSEC=yes
+FallbackDNS=8.8.8.8 1.0.0.1 8.8.4.4
+```
+
+И выключить DNS в NetworkManager
+
+`/etc/NetworkManager/conf.d/10-dns-systemd-resolved.conf`
+```
+[main]
+dns=systemd-resolved
+systemd-resolved=false
+```
 
 # Links
 

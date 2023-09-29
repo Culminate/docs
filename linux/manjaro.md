@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-09-29T10:43:52.427Z
+date: 2023-09-29T10:48:23.603Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z

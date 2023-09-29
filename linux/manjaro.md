@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-09-29T10:48:23.603Z
+date: 2023-09-29T11:03:48.966Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -105,6 +105,7 @@ https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html
 - В `/etc/resolv.conf` должен быть указан `127.0.0.53`.
 - Проверяем что systemd-resolve работает на порту `sudo ss -lntp | grep '\(State\|:53 \)'`
 - Проверяем  `resolvectl status`. Тут в конкретном подключении должен быть указан `DNSOverTLS=opportunistic` или `+DNSOverTLS`
+- `resolvectl query ya.ru` должно показать `Data was acquired via local or encrypted transport: yes`
 - Проверка wireshark'ом, в проходящих пакетах не должно быть протокола DNS
 
 ### Работа dns отдельно от NetworkManager

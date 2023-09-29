@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-09-26T07:50:25.199Z
+date: 2023-09-29T10:04:04.625Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -23,6 +23,12 @@ dateCreated: 2023-06-06T08:03:23.678Z
 ## Не видит аудиокарту (нет звука)
 
 Установить `sof-firmware`
+
+## The account is locked due to 3 failed attempts
+
+Это из-за того что используется `pam_faillock.so`.
+Чтобы изменить это поведение то меняем конфиг `/etc/security/faillock.conf`,
+и меняем там строку `deny = 3` на требуемую, чтобы отключить нужно поставить `0`
 
 # Полезное
 

@@ -2,7 +2,7 @@
 title: Manjaro
 description: 
 published: true
-date: 2023-09-29T11:03:48.966Z
+date: 2023-10-11T14:34:54.336Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-06T08:03:23.678Z
@@ -29,6 +29,17 @@ dateCreated: 2023-06-06T08:03:23.678Z
 Это из-за того что используется `pam_faillock.so`.
 Чтобы изменить это поведение то меняем конфиг `/etc/security/faillock.conf`,
 и меняем там строку `deny = 3` на требуемую, чтобы отключить нужно поставить `0`
+
+## В nemo не отображаются иконки самого приложения
+
+Найти все найтройки `gsettings list-recursively | grep -i menus-have-icons`
+
+И исправить на true
+
+```
+gsettings set org.cinnamon.desktop.interface menus-have-icons true
+gsettings set org.cinnamon.settings-daemon.plugins.xsettings menus-have-icons true
+```
 
 # Полезное
 

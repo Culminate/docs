@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: true
-date: 2023-08-28T14:25:28.048Z
+date: 2023-10-17T08:06:07.423Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-28T14:22:13.121Z
@@ -14,8 +14,8 @@ dateCreated: 2023-08-28T14:22:13.121Z
 
 ```bash
 ffmpeg -i input.mp4 \
--vf "fps=10,scale=-1:540:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" \
--loop 1 output.gif
+-vf "fps=10,scale=-1:540:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 \
+output.gif
 ```
 
 * [fps](https://ffmpeg.org/ffmpeg-filters.html#fps) filter sets the frame rate. A rate of 10 frames per second is used in the example.

@@ -2,7 +2,7 @@
 title: Links
 description: 
 published: true
-date: 2024-02-27T10:07:42.594Z
+date: 2024-02-27T10:08:21.521Z
 tags: 
 editor: markdown
 dateCreated: 2024-02-27T10:07:42.594Z
@@ -19,3 +19,5 @@ dateCreated: 2024-02-27T10:07:42.594Z
 [Wrapping external libraries in C/C++](https://programmingwithjp.wordpress.com/2020/11/28/wrapping-external-libraries-in-c-c/)
 
 [Signal safe locks](https://locklessinc.com/articles/signalsafe_locks/)
+
+[How setting the TZ environment variable avoids thousands of system calls](https://blog.packagecloud.io/set-environment-variable-save-thousands-of-system-calls/)

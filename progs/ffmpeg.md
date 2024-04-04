@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: true
-date: 2023-10-17T08:06:07.423Z
+date: 2024-04-04T18:59:58.398Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-28T14:22:13.121Z
@@ -25,6 +25,16 @@ output.gif
 * Control looping with `-loop` output option but the values are confusing. A value of `0` is infinite looping, `-1` is no looping, and `1` will loop once meaning it will play twice. So a value of 10 will cause the GIF to play 11 times.
 
 See [High quality GIF with FFmpeg](http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html) for explanations, example images, and more detailed info for advanced usage.
+
+# high efficient encoding
+
+Выбираем для декодирования эффективный кодек av1. Кодировать будем в него декодером svtav1 от intel.
+
+```shell
+ffmpeg -i input_video.mp4 \
+-c:v libsvtav1 -svtav1-params fast-decode=1 -crf 45 -preset 6 -map 0 \
+-ss 00:05:20 -to 00:10:00  output_video.mp4
+```
 
 ## links
 

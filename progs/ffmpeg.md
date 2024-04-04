@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: true
-date: 2024-04-04T18:59:58.398Z
+date: 2024-04-04T19:00:35.268Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-28T14:22:13.121Z
@@ -26,6 +26,11 @@ output.gif
 
 See [High quality GIF with FFmpeg](http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html) for explanations, example images, and more detailed info for advanced usage.
 
+## links
+
+https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
+https://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
+
 # high efficient encoding
 
 Выбираем для декодирования эффективный кодек av1. Кодировать будем в него декодером svtav1 от intel.
@@ -38,5 +43,4 @@ ffmpeg -i input_video.mp4 \
 
 ## links
 
-https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
-https://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
+https://trac.ffmpeg.org/wiki/Encode/AV1

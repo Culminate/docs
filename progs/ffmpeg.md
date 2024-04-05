@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: true
-date: 2024-04-05T20:20:11.552Z
+date: 2024-04-05T20:21:24.071Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-28T14:22:13.121Z
@@ -52,6 +52,13 @@ ffmpeg -i input_video.mp4 \
 -filter:a "highpass=f=300,asendcmd=0.0 afftdn sn start,asendcmd=1.5 afftdn sn stop,afftdn=nf=-20,dialoguenhance,lowpass=f=3000, arnndn=m=lq.rnnn" \
 -ss 00:00:00 -to 00:00:10 -map 0:a:1 test.mp3
 ```
+
+
+- First everything below 300Hz is thrown away;
+- the Denoise with FFT filter is used with a noise profile of the first 1.5 seconds of the audio and a noise floor of -20dB;
+- then we enhance the dialogue;
+- finally remove frequencies above 3000Hz
+
 
 ## links
 

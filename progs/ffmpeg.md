@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: true
-date: 2024-04-05T20:31:20.184Z
+date: 2024-04-05T20:40:59.160Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-28T14:22:13.121Z
@@ -64,3 +64,4 @@ ffmpeg -i input_video.mp4 \
 
 https://github.com/GregorR/rnnoise-models
 https://stackoverflow.com/questions/44159621/how-to-denoise-audio-with-sox
+https://forum.videohelp.com/threads/413220-Remove-noise-having-a-noise-file

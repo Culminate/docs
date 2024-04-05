@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: true
-date: 2024-04-05T20:21:24.071Z
+date: 2024-04-05T20:22:38.513Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-28T14:22:13.121Z
@@ -50,7 +50,7 @@ https://trac.ffmpeg.org/wiki/Encode/AV1
 ```
 ffmpeg -i input_video.mp4 \
 -filter:a "highpass=f=300,asendcmd=0.0 afftdn sn start,asendcmd=1.5 afftdn sn stop,afftdn=nf=-20,dialoguenhance,lowpass=f=3000, arnndn=m=lq.rnnn" \
--ss 00:00:00 -to 00:00:10 -map 0:a:1 test.mp3
+-ss 00:00:00 -to 00:00:10 -map 0:a:1 -f matroska - | ffplay -i -
 ```
 
 

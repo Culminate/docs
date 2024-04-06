@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: true
-date: 2024-04-05T20:40:59.160Z
+date: 2024-04-06T13:41:35.789Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-28T14:22:13.121Z
@@ -45,7 +45,7 @@ ffmpeg -i input_video.mp4 \
 
 https://trac.ffmpeg.org/wiki/Encode/AV1
 
-# denoise
+# denoise audio
 
 ```
 ffmpeg -i input_video.mp4 \

@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: true
-date: 2024-04-06T13:41:35.789Z
+date: 2024-04-07T14:18:02.066Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-28T14:22:13.121Z
@@ -47,10 +47,16 @@ https://trac.ffmpeg.org/wiki/Encode/AV1
 
 # denoise audio
 
-```
+```shell
 ffmpeg -i input_video.mp4 \
 -filter:a "highpass=f=300,asendcmd=0.0 afftdn sn start,asendcmd=1.5 afftdn sn stop,afftdn=nf=-20,dialoguenhance,lowpass=f=3000, arnndn=m=lq.rnnn" \
 -ss 00:00:00 -to 00:00:10 -map 0:a:1 -f matroska - | ffplay -i -
+```
+
+```shell
+ffmpeg -i in.mp4 -c:v libsvtav1 -svtav1-params fast-decode=1 -crf 42 -preset 6 -filter_complex \
+"[0:a:1]highpass=f=200,lowpass=f=3000,afftdn=nf=-20,arnndn=m=../lq.rnnn[denoise];[0:a:0][denoise]amix[out]" \
+-map 0 -map "[out]" out.mp4
 ```
 
 

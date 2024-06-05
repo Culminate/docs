@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: true
-date: 2024-04-07T14:18:02.066Z
+date: 2024-06-05T20:27:53.354Z
 tags: 
 editor: markdown
 dateCreated: 2023-08-28T14:22:13.121Z
@@ -44,6 +44,13 @@ ffmpeg -i input_video.mp4 \
 ## links
 
 https://trac.ffmpeg.org/wiki/Encode/AV1
+
+# audio compose
+
+```
+ffmpeg -i input_video.mp4 -filter_complex "[0:a:1]volume=1.2[vol];[0:a:0][vol]amix=inputs=2[out]" -map 0:v:0
+ -map [out] mini2.mp4
+```
 
 # denoise audio
 

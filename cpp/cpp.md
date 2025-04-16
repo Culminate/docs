@@ -1,11 +1,11 @@
 ---
 title: cpp
 description: 
-published: true
-date: 2023-04-21T12:50:01.413Z
+published: 1
+date: 2025-04-16T16:16:10.766Z
 tags: 
 editor: markdown
-dateCreated: 2022-03-11T07:55:15.284Z
+dateCreated: 2025-01-09T22:05:04.537Z
 ---
 
 # C++
@@ -268,3 +268,4 @@ TODO
 [Spinlocks and Read-Write Locks](http://locklessinc.com/articles/locks/)
 [Ускоряем std::shared_mutex в 10 раз](https://habr.com/ru/post/328362/)
 [https://betterprogramming.pub/c-memory-pool-and-small-object-allocator-8f27671bd9ee](https://betterprogramming.pub/c-memory-pool-and-small-object-allocator-8f27671bd9ee)
+[Миграция на поседневный С++17](https://ps-group.github.io/cxx/cxx17)

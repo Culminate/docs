@@ -1,11 +1,11 @@
 ---
 title: FFMPEG
 description: 
-published: true
-date: 2024-06-05T20:30:47.019Z
+published: 1
+date: 2025-05-23T20:01:50.905Z
 tags: 
 editor: markdown
-dateCreated: 2023-08-28T14:22:13.121Z
+dateCreated: 2025-01-09T22:05:30.101Z
 ---
 
 # ffmpeg
@@ -37,8 +37,8 @@ https://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
 
 ```shell
 ffmpeg -i input_video.mp4 \
--c:v libsvtav1 -svtav1-params fast-decode=1 -crf 45 -preset 6 -map 0 \
--ss 00:05:20 -to 00:10:00  output_video.mp4
+-c:v libsvtav1 -svtav1-params fast-decode=1 -crf 45 -preset 6 -map 0 -ss 00:05:20 -to 00:10:00 \
+output_video.mp4
 ```
 
 ## links
@@ -47,9 +47,12 @@ https://trac.ffmpeg.org/wiki/Encode/AV1
 
 # audio compose
 
+Увеличивает громкость на первой аудиодорожке. Сливает в одну 0 и 1 аудиодорожку.
+
 ```shell
-ffmpeg -i input_video.mp4 -filter_complex "[0:a:1]volume=1.2[vol];[0:a:0][vol]amix=inputs=2[out]" \
--map 0:v:0 -map [out] mini2.mp4
+ffmpeg -i input_video.mp4 \
+-filter_complex "[0:a:1]volume=1.2[vol];[0:a:0][vol]amix=inputs=2[out]" -map 0:v:0 -map [out] \
+output_video.mp4
 ```
 
 # denoise audio

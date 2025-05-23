@@ -2,13 +2,13 @@
 title: Debug
 description: 
 published: 1
-date: 2025-05-23T20:21:31.524Z
+date: 2025-05-23T20:30:30.201Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-20T17:10:34.258Z
 ---
 
-# Debug
+# Debug info
 
 Есть несколько способов собрать и связать дебаг информацию в linux.
 
@@ -26,7 +26,18 @@ objcopy --strip-debug executable
 
 ## build-id
 
-`.note.gnu.build-id`
+Есть ещё способ связать debug информацию с бинарным файлом, который используется во всех дистрибутивах.
+
+С помощью флага линковщика `-Wl,--build-id=sha1` можно добавить уникальный хэш бинарного файла в секцию `.note.gnu.build-id`.
+
+По этому хэшу будет искаться debug информация в директории `/usr/lib/debug/.build-id/`.
+
+```
+/usr/lib/debug/.build-id/ab/cdef1234 -> ../../../../bin/foo
+/usr/lib/debug/.build-id/ab/cdef1234.debug -> ../../usr/bin/foo.debug
+```
+
+Так же эта информация может выгружаться с централизовнных серверов с помощью сервиса debuginfod
 
 # links
 
@@ -34,3 +45,4 @@ https://gcc.gnu.org/wiki/DebugFission
 https://sourceware.org/gdb/current/onlinedocs/gdb.html/Separate-Debug-Files.html
 https://sourceware.org/gdb/current/onlinedocs/gdb.html/Index-Files.html
 https://interrupt.memfault.com/blog/gnu-build-id-for-firmware
+https://fedoraproject.org/wiki/RolandMcGrath/BuildID

@@ -2,7 +2,7 @@
 title: Debug
 description: 
 published: 1
-date: 2025-05-23T20:34:32.263Z
+date: 2025-05-23T21:04:32.286Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-20T17:10:34.258Z
@@ -32,16 +32,18 @@ objcopy --strip-debug executable
 
 По этому хэшу будет искаться debug информация в директории `/usr/lib/debug/.build-id/`.
 
-```
-/usr/lib/debug/.build-id/ab/cdef1234 -> ../../../../bin/foo
-/usr/lib/debug/.build-id/ab/cdef1234.debug -> ../../usr/bin/foo.debug
-```
-
 Так же эта информация может выгружаться с централизовнных серверов с помощью сервиса debuginfod
 
 > Можно собрать GCC с флагом `--enable-linker-build-id` и по умолчанию все исполняемые файлы будут собираться с build-id
 {.is-info}
 
+## Debug Fission
+
+TODO `-gsplit-dwarf` and `--gdb-index`
+
+## GDB
+
+TODO Где ищет файлы как настроить поиск
 
 # links
 

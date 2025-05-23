@@ -2,7 +2,7 @@
 title: Debug
 description: 
 published: 1
-date: 2025-05-23T20:30:30.201Z
+date: 2025-05-23T20:34:32.263Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-20T17:10:34.258Z
@@ -38,6 +38,10 @@ objcopy --strip-debug executable
 ```
 
 Так же эта информация может выгружаться с централизовнных серверов с помощью сервиса debuginfod
+
+> Можно собрать GCC с флагом `--enable-linker-build-id` и по умолчанию все исполняемые файлы будут собираться с build-id
+{.is-info}
+
 
 # links
 

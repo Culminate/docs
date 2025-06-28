@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: 1
-date: 2025-06-28T11:29:30.193Z
+date: 2025-06-28T16:28:54.469Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:05:30.101Z
@@ -10,29 +10,50 @@ dateCreated: 2025-01-09T22:05:30.101Z
 
 # ffmpeg
 
-# basic flow
+# basic
 
 ```shell
-ffmpeg <some options> -i input.ext <options> output.ext
+ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url}
 ```
 
-# cut flow
+## time duration
 
-- time format `00:00:00.124`
-- `-ss` start fragment
-- `-to` end fragment or `-t` duration
+There are two accepted syntaxes for expressing time duration. 
 
-```shell
-# precision cut video
-ffmpeg -i input.ext -ss 00:00:25 -to 00:02:10 output.ext
-
-# select frame by nearest keyframe
-ffmpeg -ss 00:00:25 -to 00:02:10 -i input.ext output.ext
 ```
+[-][HH:]MM:SS[.m...]
+```
+
+HH expresses the number of hours, MM the number of minutes for a maximum of 2 digits, and SS the number of seconds for a maximum of 2 digits. The m at the end expresses decimal value for SS.
+
+or
+
+```
+[-]S+[.m...][s|ms|us]
+```
+
+S expresses the number of seconds, with the optional decimal part m. The optional literal suffixes ‘s’, ‘ms’ or ‘us’ indicate to interpret the value as seconds, milliseconds or microseconds, respectively.
+
+In both expressions, the optional ‘-’ indicates negative duration. 
+
+## cut video
+
+### `-ss` start time duration (input/output)
+
+- When used as an input option (before -i), seeks nearest keyframe in input.
+- When used as an output option (before an output url), decodes but discards input until the timestamps reach position.
+
+Note: when used first option copying a stream, it leads to artifacts.
+
+### `-to` end time duration (input/output)
+
+### `-t` time duration (input/output)
 
 # cut without reencoding
 
-
+```shell
+ffmpeg -ss 00:00:25 -i input.ext -to 00:01:00 -c:v copy -c:a copy -map 0 output.ext
+```
 
 https://superuser.com/questions/377343/cut-part-from-video-file-from-start-position-to-end-position-with-ffmpeg/377407#377407
 
@@ -57,7 +78,7 @@ https://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
 
 # high efficient encoding
 
-Выбираем для декодирования эффективный кодек av1. Кодировать будем в него декодером svtav1 от intel.
+Select for encoding High efficient codec av1. Use libstav1 by intel.
 
 ```shell
 ffmpeg -i input_video.mp4 \
@@ -105,3 +126,7 @@ ffmpeg -i in.mp4 -c:v libsvtav1 -svtav1-params fast-decode=1 -crf 42 -preset 6 -
 https://github.com/GregorR/rnnoise-models
 https://stackoverflow.com/questions/44159621/how-to-denoise-audio-with-sox
 https://forum.videohelp.com/threads/413220-Remove-noise-having-a-noise-file
+
+# links
+
+https://www.ffmpeg.org/ffmpeg.html

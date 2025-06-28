@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: 1
-date: 2025-06-28T16:31:29.531Z
+date: 2025-06-28T16:37:14.283Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:05:30.101Z
@@ -10,13 +10,13 @@ dateCreated: 2025-01-09T22:05:30.101Z
 
 # ffmpeg
 
-# basic
+# Basic
 
 ```shell
 ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url}
 ```
 
-## time duration
+## Time duration
 
 There are two accepted syntaxes for expressing time duration. 
 
@@ -34,22 +34,29 @@ or
 
 `S` expresses the number of seconds, with the optional decimal part `m`. The optional literal suffixes `s`, `ms` or `us` indicate to interpret the value as seconds, milliseconds or microseconds, respectively.
 
-In both expressions, the optional `-` indicates negative duration. 
+In both expressions, the optional `-` indicates negative duration.
 
-## cut video
+**examples:**
+- `55` 55 seconds
+- `0.2` 0.2 seconds
+- `200ms` 200 milliseconds, that’s 0.2s
+- `200000us` 200000 microseconds, that’s 0.2s
+- `12:03:45` 12 hours, 03 minutes and 45 seconds
+- `23.189` 23.189 seconds 
 
-### `-ss` start [position](#time-duration) (input/output)
+## Stream Selection
 
-- When used as an input option (before -i), seeks nearest keyframe in input.
-- When used as an output option (before an output url), decodes but discards input until the timestamps reach position.
+## Cut video
 
-Note: when used first option copying a stream, it leads to artifacts.
+- `-ss` start [position](#time-duration) (input/output)
+  - When used as an input option (before -i), seeks nearest keyframe in input.
+  - When used as an output option (before an output url), decodes but discards input until the timestamps reach position.
+  
+  Note: when used first option copying a stream, it leads to artifacts.
+- `-to` end [position](#time-duration) (input/output)
+- `-t` [duration](#time-duration) (input/output)
 
-### `-to` end [position](#time-duration) (input/output)
-
-### `-t` [duration](#time-duration) (input/output)
-
-# cut without reencoding
+# Cut without reencoding
 
 ```shell
 ffmpeg -ss 00:00:25 -i input.ext -to 00:01:00 -c:v copy -c:a copy -map 0 output.ext
@@ -57,7 +64,7 @@ ffmpeg -ss 00:00:25 -i input.ext -to 00:01:00 -c:v copy -c:a copy -map 0 output.
 
 https://superuser.com/questions/377343/cut-part-from-video-file-from-start-position-to-end-position-with-ffmpeg/377407#377407
 
-# video to gif
+# Video to gif
 
 ```bash
 -vf "fps=10,scale=-1:540:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0
@@ -76,31 +83,27 @@ See [High quality GIF with FFmpeg](http://blog.pkh.me/p/21-high-quality-gif-with
 https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
 https://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
 
-# high efficient encoding
+# High efficient encoding
 
 Select for encoding High efficient codec av1. Use libstav1 by intel.
 
 ```shell
-ffmpeg -i input_video.mp4 \
--c:v libsvtav1 -svtav1-params fast-decode=1 -crf 45 -preset 6 -map 0 -ss 00:05:20 -to 00:10:00 \
-output_video.mp4
+-c:v libsvtav1 -svtav1-params fast-decode=1 -crf 45 -preset 6
 ```
 
 ## links
 
 https://trac.ffmpeg.org/wiki/Encode/AV1
 
-# audio compose
+# Audio compose
 
 Увеличивает громкость на первой аудиодорожке. Сливает в одну 0 и 1 аудиодорожку.
 
 ```shell
-ffmpeg -i input_video.mp4 \
--filter_complex "[0:a:1]volume=1.2[vol];[0:a:0][vol]amix=inputs=2[out]" -map 0:v:0 -map [out] \
-output_video.mp4
+-filter_complex "[0:a:1]volume=1.2[vol];[0:a:0][vol]amix=inputs=2[out]" -map 0:v:0 -map [out]
 ```
 
-# denoise audio
+# Denoise audio
 
 ```shell
 ffmpeg -i input_video.mp4 \

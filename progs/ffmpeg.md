@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: 1
-date: 2025-06-28T16:28:54.469Z
+date: 2025-06-28T16:29:58.581Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:05:30.101Z
@@ -38,16 +38,16 @@ In both expressions, the optional ‘-’ indicates negative duration.
 
 ## cut video
 
-### `-ss` start time duration (input/output)
+### `-ss` start [position](#time-duration) (input/output)
 
 - When used as an input option (before -i), seeks nearest keyframe in input.
 - When used as an output option (before an output url), decodes but discards input until the timestamps reach position.
 
 Note: when used first option copying a stream, it leads to artifacts.
 
-### `-to` end time duration (input/output)
+### `-to` end [position](#time-duration) (input/output)
 
-### `-t` time duration (input/output)
+### `-t` [duration](#time-duration) (input/output)
 
 # cut without reencoding
 

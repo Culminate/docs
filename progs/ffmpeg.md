@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: 1
-date: 2025-06-28T16:29:58.581Z
+date: 2025-06-28T16:31:29.531Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:05:30.101Z
@@ -24,7 +24,7 @@ There are two accepted syntaxes for expressing time duration.
 [-][HH:]MM:SS[.m...]
 ```
 
-HH expresses the number of hours, MM the number of minutes for a maximum of 2 digits, and SS the number of seconds for a maximum of 2 digits. The m at the end expresses decimal value for SS.
+`HH` expresses the number of hours, `MM` the number of minutes for a maximum of 2 digits, and `SS` the number of seconds for a maximum of 2 digits. The `m` at the end expresses decimal value for `SS`.
 
 or
 
@@ -32,9 +32,9 @@ or
 [-]S+[.m...][s|ms|us]
 ```
 
-S expresses the number of seconds, with the optional decimal part m. The optional literal suffixes ‘s’, ‘ms’ or ‘us’ indicate to interpret the value as seconds, milliseconds or microseconds, respectively.
+`S` expresses the number of seconds, with the optional decimal part `m`. The optional literal suffixes `s`, `ms` or `us` indicate to interpret the value as seconds, milliseconds or microseconds, respectively.
 
-In both expressions, the optional ‘-’ indicates negative duration. 
+In both expressions, the optional `-` indicates negative duration. 
 
 ## cut video
 

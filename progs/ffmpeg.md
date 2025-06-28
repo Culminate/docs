@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: 1
-date: 2025-06-28T16:55:36.564Z
+date: 2025-06-28T16:56:36.279Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:05:30.101Z
@@ -56,6 +56,7 @@ In both expressions, the optional `-` indicates negative duration.
 - `-map 0:v -map 0:a:2` select all video stream and third audio stream
 - `-map 0 -map -0:a:1` select all stream except second audio stream.
 - `-map 0 -c:v libx264 -c:a copy` encodes all video streams with libx264 and copies all audio streams. 
+- `-map 0 -c copy -c:v:1 libx264 -c:a:137 libvorbis` will copy all the streams except the second video, which will be encoded with libx264, and the 138th audio, which will be encoded with libvorbis.
 
 ## Cut video
 

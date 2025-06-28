@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: 1
-date: 2025-05-23T20:01:50.905Z
+date: 2025-06-28T11:29:30.193Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:05:30.101Z
@@ -10,12 +10,36 @@ dateCreated: 2025-01-09T22:05:30.101Z
 
 # ffmpeg
 
+# basic flow
+
+```shell
+ffmpeg <some options> -i input.ext <options> output.ext
+```
+
+# cut flow
+
+- time format `00:00:00.124`
+- `-ss` start fragment
+- `-to` end fragment or `-t` duration
+
+```shell
+# precision cut video
+ffmpeg -i input.ext -ss 00:00:25 -to 00:02:10 output.ext
+
+# select frame by nearest keyframe
+ffmpeg -ss 00:00:25 -to 00:02:10 -i input.ext output.ext
+```
+
+# cut without reencoding
+
+
+
+https://superuser.com/questions/377343/cut-part-from-video-file-from-start-position-to-end-position-with-ffmpeg/377407#377407
+
 # video to gif
 
 ```bash
-ffmpeg -i input.mp4 \
--vf "fps=10,scale=-1:540:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 \
-output.gif
+-vf "fps=10,scale=-1:540:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0
 ```
 
 * [fps](https://ffmpeg.org/ffmpeg-filters.html#fps) filter sets the frame rate. A rate of 10 frames per second is used in the example.

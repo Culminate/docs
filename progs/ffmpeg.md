@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: 1
-date: 2025-06-28T16:37:14.283Z
+date: 2025-06-28T16:46:37.453Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:05:30.101Z
@@ -45,6 +45,16 @@ In both expressions, the optional `-` indicates negative duration.
 - `23.189` 23.189 seconds 
 
 ## Stream Selection
+
+```
+-map [-]input_file_id[:stream_specifier][:view_specifier][:?] | [linklabel] (output)
+```
+
+- `-map 0` map everything
+- `-map 0:1` select specific stream. If you have two audio streams in the first input file, these streams are identified by 0:0 and 0:1
+- `-map 0:1 -map 1:2` select multiple stream. select second stream from first input and third stream from second input
+- `-map 0:v -map 0:a:2` select all video stream and third audio stream
+-  `-map 0 -map -0:a:1` select all stream except second audio stream.
 
 ## Cut video
 

@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: 1
-date: 2025-06-28T16:46:37.453Z
+date: 2025-06-28T16:48:44.053Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:05:30.101Z
@@ -88,8 +88,6 @@ https://superuser.com/questions/377343/cut-part-from-video-file-from-start-posit
 
 See [High quality GIF with FFmpeg](http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html) for explanations, example images, and more detailed info for advanced usage.
 
-## links
-
 https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
 https://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
 
@@ -100,8 +98,6 @@ Select for encoding High efficient codec av1. Use libstav1 by intel.
 ```shell
 -c:v libsvtav1 -svtav1-params fast-decode=1 -crf 45 -preset 6
 ```
-
-## links
 
 https://trac.ffmpeg.org/wiki/Encode/AV1
 
@@ -132,9 +128,6 @@ ffmpeg -i in.mp4 -c:v libsvtav1 -svtav1-params fast-decode=1 -crf 42 -preset 6 -
 - the Denoise with FFT filter is used with a noise profile of the first 1.5 seconds of the audio and a noise floor of -20dB;
 - then we enhance the dialogue;
 - finally remove frequencies above 3000Hz
-
-
-## links
 
 https://github.com/GregorR/rnnoise-models
 https://stackoverflow.com/questions/44159621/how-to-denoise-audio-with-sox

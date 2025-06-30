@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: 1
-date: 2025-06-28T16:56:36.279Z
+date: 2025-06-30T18:34:55.286Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:05:30.101Z
@@ -93,7 +93,15 @@ See [High quality GIF with FFmpeg](http://blog.pkh.me/p/21-high-quality-gif-with
 https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
 https://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
 
-# High efficient encoding
+# HEVC(H.265) Encoding
+
+```shell
+-c:v libx265 -crf 35 -preset medium
+```
+
+https://trac.ffmpeg.org/wiki/Encode/H.265
+
+# AV1 Encoding
 
 Select for encoding High efficient codec av1. Use libstav1 by intel.
 

@@ -2,7 +2,7 @@
 title: FFMPEG
 description: 
 published: 1
-date: 2025-06-30T18:34:55.286Z
+date: 2025-06-30T18:47:33.475Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:05:30.101Z
@@ -146,3 +146,4 @@ https://forum.videohelp.com/threads/413220-Remove-noise-having-a-noise-file
 # links
 
 https://www.ffmpeg.org/ffmpeg.html
+[habr.com Кодирование с кодеком HEVC простым языком](https://habr.com/ru/companies/ruvds/articles/845202/)

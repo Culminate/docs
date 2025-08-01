@@ -2,7 +2,7 @@
 title: main
 description: 
 published: 1
-date: 2025-08-01T20:00:58.801Z
+date: 2025-08-01T20:01:40.205Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-09T22:04:54.726Z
@@ -80,7 +80,6 @@ warning: format '%d' expects argument of type 'int', but argument 2 has type 'ch
 Размер массива и будет означать размер в байтах
 
 ## Полезные ссылки
-- [10 главных правил убивания жуков](https://habrahabr.ru/post/226495/)
 - [Операторы в C и C++](https://ru.wikipedia.org/wiki/Операторы_в_C_и_C%2B%2B)
 - [itoa with GCC](http://www.strudel.org.uk/itoa/)
 - [Указатели, ссылки и массивы в C и C++: точки над i](https://habrahabr.ru/post/251091/)

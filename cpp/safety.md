@@ -2,7 +2,7 @@
 title: Безопасная разработка
 description: 
 published: 1
-date: 2025-08-01T20:34:48.693Z
+date: 2025-08-01T21:56:57.497Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-01T20:34:48.693Z
@@ -36,6 +36,7 @@ https://libcxx.llvm.org/Hardening.html
 https://sourceware.org/glibc/manual/2.40/html_node/Dynamic-Linker-Hardening.html
 https://www.gnu.org/software/libc/manual/html_node/Source-Fortification.html
 https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
+https://memorysafety.openssf.org/memory-safety-continuum/
 https://gcc.gnu.org/wiki/LibstdcxxDebugMode
 
 ## санитайзеры

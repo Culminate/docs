@@ -1,11 +1,11 @@
 ---
 title: main
 description: 
-published: true
-date: 2022-02-23T19:42:36.746Z
+published: 1
+date: 2025-08-01T20:00:58.801Z
 tags: 
 editor: markdown
-dateCreated: 2022-02-23T15:03:35.447Z
+dateCreated: 2025-01-09T22:04:54.726Z
 ---
 
 # Язык Си
@@ -78,14 +78,6 @@ printf( "%d", __kaboom );
 warning: format '%d' expects argument of type 'int', but argument 2 has type 'char (*)[8]' [-Wformat=] printf( "%d", __kaboom );
 ```
 Размер массива и будет означать размер в байтах
-
-## Сборка приложений под Windows
-
-Устанавливаем пакет gcc-mingw-w64-i686 для 32 битной версии windows
-
-Используем для сборки вместо `gcc` `i686-w64-mingw32-gcc`
-
-    i686-w64-mingw32-gcc -g eepromshik.c -o eepromshik.exe
 
 ## Полезные ссылки
 - [10 главных правил убивания жуков](https://habrahabr.ru/post/226495/)

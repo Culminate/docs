@@ -47,3 +47,9 @@ $ wget -O - http://bin.entware.net/armv7sf-k3.2/installer/generic.sh | sh
 $ vi /opt/etc/opkg.conf
 ```
 
+write
+<!--stackedit_data:
+eyJwcm9wZXJ0aWVzIjoiZXh0ZW5zaW9uczpcbiAgcHJlc2V0Oi
+BnZm1cbnRpdGxlOiB3dGZcbmRhdGU6ICcyMDI0LTA4LTMwJ1xu
+IiwiaGlzdG9yeSI6Wy0xNDMzMjkzMjkxXX0=
+-->

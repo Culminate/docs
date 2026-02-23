@@ -48,8 +48,10 @@ $ vi /opt/etc/opkg.conf
 ```
 
 write
+
+
 <!--stackedit_data:
 eyJwcm9wZXJ0aWVzIjoiZXh0ZW5zaW9uczpcbiAgcHJlc2V0Oi
 BnZm1cbnRpdGxlOiB3dGZcbmRhdGU6ICcyMDI0LTA4LTMwJ1xu
-IiwiaGlzdG9yeSI6Wy0xNDMzMjkzMjkxXX0=
+IiwiaGlzdG9yeSI6WzIwNjgyNDU2MV19
 -->
